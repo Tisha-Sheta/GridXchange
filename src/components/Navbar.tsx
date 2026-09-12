@@ -33,6 +33,15 @@ export const Navbar: React.FC<Props> = ({
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleNavClick = (sectionId: string) => {
     setActiveTab('landing');
@@ -69,7 +78,13 @@ export const Navbar: React.FC<Props> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-[#E6E2D8] dark:border-[#262723] bg-[#FAF8F5]/90 dark:bg-[#0F100E]/90 backdrop-blur-md transition-colors">
+    <header
+      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        isScrolled
+          ? 'border-b border-[#E6E2D8] dark:border-[#262723] bg-[#FAF8F5]/85 dark:bg-[#0F100E]/85 backdrop-blur-md shadow-xs'
+          : 'border-b border-[#E6E2D8]/40 dark:border-[#262723]/40 bg-[#FAF8F5]/60 dark:bg-[#0F100E]/60 backdrop-blur-xs'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Left: Brand Identity */}
         <div className="flex items-center gap-10">
@@ -78,9 +93,9 @@ export const Navbar: React.FC<Props> = ({
               setActiveTab('landing');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-3 text-left group cursor-pointer"
+            className="flex items-center gap-3 text-left group cursor-pointer btn-interactive"
           >
-            <div className="w-10 h-10 rounded-2xl bg-[#1A1B19] dark:bg-[#FAF8F5] flex items-center justify-center text-white dark:text-[#1A1B19] shadow-xs group-hover:scale-102 transition-transform">
+            <div className="w-10 h-10 rounded-2xl bg-[#1A1B19] dark:bg-[#FAF8F5] flex items-center justify-center text-white dark:text-[#1A1B19] shadow-xs group-hover:scale-105 transition-transform">
               <Zap className="w-5 h-5 text-[#E5A93C] dark:text-[#D97706] fill-current" />
             </div>
             <div className="flex flex-col">
@@ -96,29 +111,29 @@ export const Navbar: React.FC<Props> = ({
             </div>
           </button>
 
-          {/* Clean Public Nav Links */}
+          {/* Clean Public Nav Links with Animated Underline */}
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-[#686B63] dark:text-[#9EA299]">
             <button
               onClick={() => handleNavClick('how-it-works')}
-              className="hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer"
+              className="nav-link-animated hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer py-1"
             >
               How It Works
             </button>
             <button
               onClick={() => handleNavClick('for-consumers')}
-              className="hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer"
+              className="nav-link-animated hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer py-1"
             >
               For Consumers
             </button>
             <button
               onClick={() => handleNavClick('for-prosumers')}
-              className="hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer"
+              className="nav-link-animated hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer py-1"
             >
               For Prosumers
             </button>
             <button
               onClick={() => handleNavClick('rebalance-section')}
-              className="hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer"
+              className="nav-link-animated hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer py-1"
             >
               Resilience
             </button>
@@ -127,15 +142,15 @@ export const Navbar: React.FC<Props> = ({
                 setActiveTab('impact');
                 setMobileMenuOpen(false);
               }}
-              className={`hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer ${
-                activeTab === 'impact' ? 'text-[#1A1B19] dark:text-[#EDEDE8] font-bold' : ''
+              className={`nav-link-animated hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer py-1 ${
+                activeTab === 'impact' ? 'text-[#1A1B19] dark:text-[#EDEDE8] font-bold active' : ''
               }`}
             >
               Impact
             </button>
             <button
               onClick={() => handleNavClick('about')}
-              className="hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer"
+              className="nav-link-animated hover:text-[#1A1B19] dark:hover:text-[#EDEDE8] transition-colors cursor-pointer py-1"
             >
               About
             </button>

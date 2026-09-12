@@ -11,7 +11,7 @@
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     color: #1A1B19;
     background-color: #FAF8F5;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
   html.dark body {
     color: #EDEDE8;
@@ -84,7 +84,7 @@
   background: #3E403B;
 }
 
-/* Gentle energy pulse animation for status indicators */
+/* Micro-interaction & Keyframe Animations */
 @keyframes naturalFlow {
   0% {
     stroke-dashoffset: 32;
@@ -99,10 +99,178 @@
   animation: naturalFlow 2.4s linear infinite;
 }
 
-/* Image container soft shadow and hover reveal */
-.editorial-card {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+/* Ambient hero mesh glow keyframes */
+@keyframes ambientBlob1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -25px) scale(1.08);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
 }
-.editorial-card:hover {
-  transform: translateY(-2px);
+
+@keyframes ambientBlob2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-35px, 25px) scale(1.06);
+  }
+  66% {
+    transform: translate(25px, -20px) scale(0.96);
+  }
 }
+
+.animate-ambient-blob-1 {
+  animation: ambientBlob1 14s ease-in-out infinite;
+}
+
+.animate-ambient-blob-2 {
+  animation: ambientBlob2 18s ease-in-out infinite;
+}
+
+/* Infinite auto-scrolling marquee keyframes */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Refined interactive card utility */
+.card-interactive {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.08), 0 6px 12px -4px rgba(0, 0, 0, 0.03);
+}
+
+.dark .card-interactive:hover {
+  box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.5), 0 6px 12px -4px rgba(0, 0, 0, 0.3);
+}
+
+/* Refined button hover micro-interactions */
+.btn-interactive {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              color 0.2s ease;
+}
+
+.btn-interactive:hover {
+  transform: scale(1.02);
+}
+
+.btn-interactive:active {
+  transform: scale(0.98);
+}
+
+/* Animated nav link underline */
+.nav-link-animated {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-solar-warm);
+  transition: width 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 2px;
+}
+
+.nav-link-animated:hover::after,
+.nav-link-animated.active::after {
+  width: 100%;
+}
+
+/* Piclo-inspired circuit board shimmer animations */
+@keyframes circuitShimmer {
+  0% {
+    stroke-dashoffset: 800;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -800;
+  }
+}
+
+@keyframes circuitGlow {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-circuit-pulse {
+  animation: circuitGlow 9s ease-in-out infinite;
+}
+
+.animate-circuit-flow {
+  stroke-dasharray: 100 600;
+  animation: circuitShimmer 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-circuit-flow-reverse {
+  stroke-dasharray: 80 500;
+  animation: circuitShimmer 18s cubic-bezier(0.4, 0, 0.2, 1) infinite reverse;
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+    transform: none !important;
+  }
+  .animate-ambient-blob-1,
+  .animate-ambient-blob-2,
+  .animate-circuit-pulse,
+  .animate-circuit-flow,
+  .animate-circuit-flow-reverse {
+    animation: none !important;
+  }
+  .card-interactive:hover {
+    transform: none !important;
+  }
+  .btn-interactive:hover {
+    transform: none !important;
+  }
+}
+
+
