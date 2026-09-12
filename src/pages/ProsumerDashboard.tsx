@@ -36,9 +36,9 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
   const [settlingTradeId, setSettlingTradeId] = useState<string | null>(null);
   const [settlementSuccessMsg, setSettlementSuccessMsg] = useState<string | null>(null);
 
-  // Sub-navigation: 'overview' | 'my_energy' | 'sell_form' | 'listing_created' | 'my_trades' | 'earnings' | 'forecast'
+  // Sub-navigation: 'overview' | 'my_energy' | 'sell_form' | 'listing_created' | 'my_listings' | 'my_trades' | 'earnings' | 'forecast'
   const [currentView, setCurrentView] = useState<
-    'overview' | 'my_energy' | 'sell_form' | 'listing_created' | 'my_trades' | 'earnings' | 'forecast'
+    'overview' | 'my_energy' | 'sell_form' | 'listing_created' | 'my_listings' | 'my_trades' | 'earnings' | 'forecast'
   >('overview');
 
   // Sell Energy Form Inputs
@@ -56,6 +56,9 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
         api.getTrades().catch(() => []),
       ]);
       setDashboardData(dash);
+      if (dash?.current_energy?.surplus !== undefined) {
+        setAvailQty(Math.max(0, dash.current_energy.surplus));
+      }
       setListings(allListings);
       setTrades(allTrades);
     } catch (err) {
@@ -110,7 +113,17 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
     }
   };
 
-  const prosumerName = user?.name || 'Rajesh Patel (P001)';
+  const prosumerName = user?.name || dashboardData?.prosumer?.user?.name || 'Prosumer';
+  const prosumerId = dashboardData?.prosumer?.id;
+  const myListings = listings.filter(
+    (l) =>
+      (prosumerId && l.prosumer_id === prosumerId) ||
+      (user && l.prosumer?.user_id === user.id) ||
+      (dashboardData?.listings && dashboardData.listings.some((dl: EnergyListing) => dl.id === l.id))
+  );
+  const sortedMyListings = [...myListings].sort(
+    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+  );
   const activeProsumerTrades = trades.filter((t) => t.status !== 'Settled' && t.status !== 'Cancelled');
   const completedProsumerTrades = trades.filter((t) => t.status === 'Settled' || t.status === 'Cancelled');
 
@@ -155,6 +168,16 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
             }`}
           >
             Sell Energy
+          </button>
+          <button
+            onClick={() => setCurrentView('my_listings')}
+            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${
+              currentView === 'my_listings'
+                ? 'bg-[#1A1B19] text-white dark:bg-[#EDEDE8] dark:text-[#1A1B19] font-bold'
+                : 'hover:bg-[#EFECE4] dark:hover:bg-[#1E1F1C] text-[#686B63] dark:text-[#8D9188]'
+            }`}
+          >
+            My Listings ({sortedMyListings.length})
           </button>
           <button
             onClick={() => setCurrentView('my_trades')}
@@ -239,7 +262,7 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                     Active Solar Generation
                   </div>
                   <div className="font-heading font-bold text-sm sm:text-base">
-                    {roleData?.solar_capacity || 6.5} kW Rooftop Solar Array
+                    {roleData?.solar_capacity ?? dashboardData?.prosumer?.solar_capacity ?? 6.5} kW Rooftop Solar Array
                   </div>
                 </div>
               </div>
@@ -270,7 +293,7 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                   Today's Generation
                 </span>
                 <div className="font-mono text-3xl font-extrabold text-[#1A1B19] dark:text-[#EDEDE8]">
-                  14.8 <span className="text-sm font-normal text-[#8D9188]">kWh</span>
+                  {dashboardData?.today_generation !== undefined ? dashboardData.today_generation.toFixed(1) : (dashboardData?.current_energy?.generation ? (dashboardData.current_energy.generation * 2.5).toFixed(1) : '0.0')} <span className="text-sm font-normal text-[#8D9188]">kWh</span>
                 </div>
                 <div className="mt-4 pt-3 border-t border-[#EFECE4] dark:border-[#262723] text-xs text-[#2D6A4F] dark:text-[#52B788] flex items-center gap-1">
                   <span>+12% vs yesterday</span>
@@ -285,10 +308,10 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                   Current Surplus
                 </span>
                 <div className="font-mono text-3xl font-extrabold text-[#B45309] dark:text-[#E5A93C]">
-                  6.2 <span className="text-sm font-normal text-[#8D9188]">kWh</span>
+                  {dashboardData?.current_energy?.surplus !== undefined ? dashboardData.current_energy.surplus.toFixed(1) : '0.0'} <span className="text-sm font-normal text-[#8D9188]">kWh</span>
                 </div>
                 <div className="mt-4 pt-3 border-t border-[#EFECE4] dark:border-[#262723] text-xs text-[#686B63] dark:text-[#8D9188]">
-                  Available to list now →
+                  {(dashboardData?.current_energy?.surplus ?? 0) > 0 ? 'Available to list now →' : 'Deficit (Cannot be sold)'}
                 </div>
               </div>
 
@@ -300,7 +323,7 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                   Energy Sold
                 </span>
                 <div className="font-mono text-3xl font-extrabold text-[#2D6A4F] dark:text-[#52B788]">
-                  {roleData?.total_energy_sold || 8.6} <span className="text-sm font-normal text-[#8D9188]">kWh</span>
+                  {roleData?.total_energy_sold ?? dashboardData?.stats?.total_energy_sold ?? 0} <span className="text-sm font-normal text-[#8D9188]">kWh</span>
                 </div>
                 <div className="mt-4 pt-3 border-t border-[#EFECE4] dark:border-[#262723] text-xs text-[#686B63] dark:text-[#8D9188]">
                   To local neighbors
@@ -315,7 +338,7 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                   Today's Earnings
                 </span>
                 <div className="font-mono text-3xl font-extrabold text-[#1A1B19] dark:text-[#EDEDE8]">
-                  ₹384
+                  ₹{roleData?.total_earnings ?? dashboardData?.stats?.total_earnings ?? 0}
                 </div>
                 <div className="mt-4 pt-3 border-t border-[#EFECE4] dark:border-[#262723] text-xs text-[#686B63] dark:text-[#8D9188]">
                   Avg. ₹7.20 / kWh cleared
@@ -398,18 +421,26 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-3xl bg-[#FFFFFF] dark:bg-[#171816] border border-[#E6E2D8] dark:border-[#2A2B27]">
               <span className="text-xs font-mono text-[#8D9188] uppercase block">Instant Generation</span>
-              <div className="font-mono text-3xl font-extrabold text-[#1A1B19] dark:text-[#EDEDE8] mt-1">9.0 kW</div>
+              <div className="font-mono text-3xl font-extrabold text-[#1A1B19] dark:text-[#EDEDE8] mt-1">
+                {dashboardData?.current_energy?.generation !== undefined ? dashboardData.current_energy.generation.toFixed(1) : '0.0'} kW
+              </div>
               <p className="text-xs text-[#8D9188] mt-2">Peak noon solar irradiance</p>
             </div>
             <div className="p-6 rounded-3xl bg-[#FFFFFF] dark:bg-[#171816] border border-[#E6E2D8] dark:border-[#2A2B27]">
               <span className="text-xs font-mono text-[#8D9188] uppercase block">Home Consumption</span>
-              <div className="font-mono text-3xl font-extrabold text-[#686B63] dark:text-[#9EA299] mt-1">3.0 kW</div>
+              <div className="font-mono text-3xl font-extrabold text-[#686B63] dark:text-[#9EA299] mt-1">
+                {dashboardData?.current_energy?.consumption !== undefined ? dashboardData.current_energy.consumption.toFixed(1) : '0.0'} kW
+              </div>
               <p className="text-xs text-[#8D9188] mt-2">Base household load</p>
             </div>
             <div className="p-6 rounded-3xl bg-[#FFFFFF] dark:bg-[#171816] border border-[#E6E2D8] dark:border-[#2A2B27]">
               <span className="text-xs font-mono text-[#B45309] dark:text-[#E5A93C] uppercase block">Surplus for Dispatch</span>
-              <div className="font-mono text-3xl font-extrabold text-[#B45309] dark:text-[#E5A93C] mt-1">6.0 kWh</div>
-              <p className="text-xs text-[#2D6A4F] dark:text-[#52B788] mt-2">Available for peer trading</p>
+              <div className="font-mono text-3xl font-extrabold text-[#B45309] dark:text-[#E5A93C] mt-1">
+                {dashboardData?.current_energy?.surplus !== undefined ? dashboardData.current_energy.surplus.toFixed(1) : '0.0'} kWh
+              </div>
+              <p className={`text-xs mt-2 ${(dashboardData?.current_energy?.surplus ?? 0) > 0 ? 'text-[#2D6A4F] dark:text-[#52B788]' : 'text-amber-600 dark:text-amber-400'}`}>
+                {(dashboardData?.current_energy?.surplus ?? 0) > 0 ? 'Available for peer trading' : 'Deficit — household load exceeds solar generation'}
+              </p>
             </div>
           </div>
         </div>
@@ -433,6 +464,12 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
               </p>
             </div>
 
+            {dashboardData?.current_energy?.surplus !== undefined && dashboardData.current_energy.surplus <= 0 && (
+              <div className="mb-6 p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300 text-xs font-mono">
+                ⚠️ Energy Deficit: Your current solar surplus is {dashboardData.current_energy.surplus.toFixed(1)} kWh. Deficit energy cannot be listed or sold on the marketplace.
+              </div>
+            )}
+
             <form onSubmit={handleCreateListing} className="space-y-6">
               <div>
                 <label className="block text-xs font-mono uppercase tracking-wider text-[#8D9188] mb-2 font-semibold">
@@ -441,12 +478,13 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                 <div className="flex items-center gap-3">
                   <input
                     type="number"
-                    min="1"
-                    max="50"
-                    step="0.5"
+                    min="0.1"
+                    max={Math.max(1, dashboardData?.current_energy?.surplus || 50)}
+                    step="0.1"
                     value={availQty}
                     onChange={(e) => setAvailQty(Number(e.target.value))}
-                    className="flex-1 px-5 py-4 rounded-2xl border border-[#E6E2D8] dark:border-[#2C2D29] bg-[#FAF8F5] dark:bg-[#111210] font-mono text-xl font-bold text-[#1A1B19] dark:text-[#EDEDE8] focus:outline-none focus:border-[#B45309]"
+                    disabled={dashboardData?.current_energy?.surplus !== undefined && dashboardData.current_energy.surplus <= 0}
+                    className="flex-1 px-5 py-4 rounded-2xl border border-[#E6E2D8] dark:border-[#2C2D29] bg-[#FAF8F5] dark:bg-[#111210] font-mono text-xl font-bold text-[#1A1B19] dark:text-[#EDEDE8] focus:outline-none focus:border-[#B45309] disabled:opacity-50"
                     required
                   />
                   <span className="font-mono text-lg font-bold text-[#686B63]">kWh</span>
@@ -491,8 +529,8 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
               <div className="pt-4">
                 <button
                   type="submit"
-                  disabled={creatingListing}
-                  className="w-full py-5 rounded-full bg-[#B45309] dark:bg-[#E5A93C] hover:bg-[#92400E] dark:hover:bg-[#F59E0B] text-white dark:text-[#1A1B19] font-heading font-extrabold text-base transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                  disabled={creatingListing || (dashboardData?.current_energy?.surplus !== undefined && dashboardData.current_energy.surplus <= 0)}
+                  className="w-full py-5 rounded-full bg-[#B45309] dark:bg-[#E5A93C] hover:bg-[#92400E] dark:hover:bg-[#F59E0B] text-white dark:text-[#1A1B19] font-heading font-extrabold text-base transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span>{creatingListing ? 'Publishing...' : 'Create Listing'}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -520,14 +558,14 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
 
           <div className="mt-8 flex flex-col gap-3">
             <button
-              onClick={() => setCurrentView('my_trades')}
-              className="w-full py-4 rounded-full bg-[#1A1B19] dark:bg-[#EDEDE8] text-white dark:text-[#1A1B19] font-bold text-sm"
+              onClick={() => setCurrentView('my_listings')}
+              className="w-full py-4 rounded-full bg-[#1A1B19] dark:bg-[#EDEDE8] text-white dark:text-[#1A1B19] font-bold text-sm cursor-pointer"
             >
-              View in My Trades
+              View My Listings
             </button>
             <button
               onClick={() => setCurrentView('overview')}
-              className="w-full py-3 rounded-full border border-[#E6E2D8] dark:border-[#2C2D29] text-xs font-mono text-[#8D9188]"
+              className="w-full py-3 rounded-full border border-[#E6E2D8] dark:border-[#2C2D29] text-xs font-mono text-[#8D9188] cursor-pointer"
             >
               Return to Overview
             </button>
@@ -536,7 +574,108 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
       )}
 
       {/* =========================================================
-          VIEW 5: MY TRADES (Seller Trades)
+          VIEW 5: MY LISTINGS (Active & Available Energy Listings)
+          ========================================================= */}
+      {currentView === 'my_listings' && (
+        <div className="space-y-6">
+          <div className="flex items-center justify-between pb-4 border-b border-[#EFECE4] dark:border-[#262723]">
+            <div>
+              <h2 className="font-heading text-2xl font-bold text-[#1A1B19] dark:text-[#EDEDE8]">
+                My Listings & Active Offers
+              </h2>
+              <p className="text-xs text-[#8D9188] mt-0.5">
+                Solar energy offerings published to the local microgrid marketplace
+              </p>
+            </div>
+            <button
+              onClick={() => setCurrentView('sell_form')}
+              className="px-4 py-2 rounded-full bg-[#B45309] text-white text-xs font-bold hover:bg-[#92400E] transition-colors cursor-pointer"
+            >
+              + Create Listing
+            </button>
+          </div>
+
+          {sortedMyListings.length === 0 ? (
+            <div className="p-12 text-center rounded-3xl bg-[#FFFFFF] dark:bg-[#171816] border border-[#E6E2D8] dark:border-[#2A2B27]">
+              <Sun className="w-10 h-10 text-[#8D9188] mx-auto mb-3" />
+              <h3 className="font-heading font-bold text-base text-[#1A1B19] dark:text-[#EDEDE8]">
+                No active listings yet
+              </h3>
+              <p className="text-xs text-[#686B63] dark:text-[#8D9188] mt-1 mb-6">
+                Publish a solar listing to offer your clean surplus kilowatt-hours to neighbors.
+              </p>
+              <button
+                onClick={() => setCurrentView('sell_form')}
+                className="px-6 py-3 rounded-full bg-[#B45309] text-white text-xs font-bold cursor-pointer"
+              >
+                Create Listing Now
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {sortedMyListings.map((l) => {
+                const isAvailable = l.status === 'Available';
+                const timeWindow = `${l.start_time} - ${l.end_time}`;
+
+                return (
+                  <div
+                    key={l.id}
+                    className="p-6 rounded-3xl bg-[#FFFFFF] dark:bg-[#171816] border border-[#E6E2D8] dark:border-[#2A2B27] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <span className="font-heading font-bold text-base text-[#1A1B19] dark:text-[#EDEDE8]">
+                          Listing #{l.id.slice(-5)}
+                        </span>
+                        <span
+                          className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase ${
+                            isAvailable
+                              ? 'bg-[#E8F2EC] text-[#2D6A4F] dark:bg-[#1B2920] dark:text-[#52B788]'
+                              : 'bg-[#FEF3C7] text-[#B45309] dark:bg-[#2A2312] dark:text-[#E5A93C]'
+                          }`}
+                        >
+                          {l.status}
+                        </span>
+                        {isAvailable && (
+                          <span className="text-[10px] font-mono text-[#2D6A4F] dark:text-[#52B788] font-semibold flex items-center gap-1">
+                            <CheckCircle2 className="w-3 h-3 inline" /> Open for Matching
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="text-xs text-[#686B63] dark:text-[#8D9188] flex flex-wrap items-center gap-2 sm:gap-4">
+                        <span>Time Window: <strong>{timeWindow}</strong></span>
+                        <span>•</span>
+                        <span>Date: {l.date || 'Today'}</span>
+                        <span>•</span>
+                        <span>Zone: {l.grid_zone_id ? l.grid_zone_id.replace('zone_', 'Zone ').toUpperCase() : 'Zone A'}</span>
+                      </div>
+
+                      <div className="text-[11px] font-mono text-[#686B63] dark:text-[#8D9188]">
+                        Published on {new Date(l.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} • Ready for peer matching
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:items-end gap-2 font-mono text-xs">
+                      <div>
+                        <div className="font-extrabold text-base text-[#1A1B19] dark:text-[#EDEDE8]">
+                          {l.quantity} kWh @ ₹{l.price.toFixed(2)}/kWh
+                        </div>
+                        <div className="text-[11px] text-[#2D6A4F] dark:text-[#52B788] font-bold">
+                          Total: ₹{(l.quantity * l.price).toFixed(2)}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* =========================================================
+          VIEW 6: MY TRADES (Seller Trades)
           ========================================================= */}
       {currentView === 'my_trades' && (
         <div className="space-y-6">
@@ -683,13 +822,13 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
             <div className="p-6 rounded-3xl bg-[#FFFFFF] dark:bg-[#171816] border border-[#E6E2D8] dark:border-[#2A2B27]">
               <span className="text-xs font-mono text-[#8D9188] uppercase block">Lifetime Earnings</span>
               <div className="font-mono text-3xl font-extrabold text-[#B45309] dark:text-[#E5A93C] mt-1">
-                ₹{roleData?.total_earnings || 2130}
+                ₹{roleData?.total_earnings ?? dashboardData?.stats?.total_earnings ?? 0}
               </div>
             </div>
             <div className="p-6 rounded-3xl bg-[#FFFFFF] dark:bg-[#171816] border border-[#E6E2D8] dark:border-[#2A2B27]">
               <span className="text-xs font-mono text-[#8D9188] uppercase block">Energy Sold</span>
               <div className="font-mono text-3xl font-extrabold text-[#1A1B19] dark:text-[#EDEDE8] mt-1">
-                {roleData?.total_energy_sold || 284.0} kWh
+                {roleData?.total_energy_sold ?? dashboardData?.stats?.total_energy_sold ?? 0} kWh
               </div>
             </div>
             <div className="p-6 rounded-3xl bg-[#FFFFFF] dark:bg-[#171816] border border-[#E6E2D8] dark:border-[#2A2B27]">
@@ -720,15 +859,21 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 font-mono text-xs">
               <div className="p-4 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1D1A]">
                 <span className="text-[#8D9188] block text-[10px] uppercase">Predicted Generation</span>
-                <span className="font-extrabold text-xl text-[#1A1B19] dark:text-[#EDEDE8]">8.8 kWh</span>
+                <span className="font-extrabold text-xl text-[#1A1B19] dark:text-[#EDEDE8]">
+                  {dashboardData?.forecast?.predicted_generation !== undefined ? dashboardData.forecast.predicted_generation.toFixed(1) : '0.0'} kWh
+                </span>
               </div>
               <div className="p-4 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1D1A]">
                 <span className="text-[#8D9188] block text-[10px] uppercase">Predicted Surplus (2-3 PM)</span>
-                <span className="font-extrabold text-xl text-[#B45309] dark:text-[#E5A93C]">5.8 kWh</span>
+                <span className="font-extrabold text-xl text-[#B45309] dark:text-[#E5A93C]">
+                  {dashboardData?.forecast?.predicted_surplus !== undefined ? dashboardData.forecast.predicted_surplus.toFixed(1) : '0.0'} kWh
+                </span>
               </div>
               <div className="p-4 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1D1A]">
                 <span className="text-[#8D9188] block text-[10px] uppercase">Model Confidence</span>
-                <span className="font-extrabold text-xl text-[#2D6A4F] dark:text-[#52B788]">94%</span>
+                <span className="font-extrabold text-xl text-[#2D6A4F] dark:text-[#52B788]">
+                  {dashboardData?.forecast?.confidence ?? 92}%
+                </span>
               </div>
             </div>
           </div>

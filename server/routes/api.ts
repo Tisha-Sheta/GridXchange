@@ -86,6 +86,16 @@ router.post('/auth/register', (req: Request, res: Response) => {
     return res.status(400).json({ success: false, error: 'Role must be either consumer or prosumer' });
   }
 
+  if (role === 'prosumer') {
+    const capacityNum = Number(solar_capacity);
+    if (isNaN(capacityNum) || capacityNum <= 0) {
+      return res.status(400).json({
+        success: false,
+        error: 'Solar capacity must be a positive number greater than 0 kW',
+      });
+    }
+  }
+
   const existing = db.findUserByEmail(email);
   if (existing) {
     return res.status(400).json({ success: false, error: 'An account with this email address already exists' });
@@ -103,13 +113,29 @@ router.post('/auth/register', (req: Request, res: Response) => {
   });
 
   if (role === 'prosumer') {
-    db.createProsumer({
+    const capacity = Number(solar_capacity);
+    const newProsumer = db.createProsumer({
       user_id: newUser.id,
-      solar_capacity: Number(solar_capacity) || 5.0,
+      solar_capacity: capacity,
       reliability_score: 90,
       total_energy_sold: 0,
       total_earnings: 0,
     });
+
+    // Auto-create unique smart meter linked to this user
+    const meterNumber = `M${String(db.getState().smart_meters.length + 1).padStart(3, '0')}`;
+    const gridZone = db.getGridZoneById(newUser.location)?.id || 'zone_a';
+    const smartMeter = db.createSmartMeter({
+      user_id: newUser.id,
+      meter_number: meterNumber,
+      grid_zone_id: gridZone,
+    });
+
+    // Generate simulated meter readings based on their signup solar capacity
+    db.generateSimulatedReadingsForMeter(smartMeter.id, capacity);
+
+    // Pre-generate forecast
+    ForecastingService.getForecastForProsumer(newProsumer.id);
   } else {
     db.createConsumer({
       user_id: newUser.id,
@@ -239,6 +265,11 @@ router.get('/prosumer/dashboard', optionalAuth, (req: AuthRequest, res: Response
 
   const meter = db.getMeterByUserId(prosumer.user_id);
   const latestReading = meter ? db.getLatestReadingForMeter(meter.id) : undefined;
+  const readings = meter ? db.getReadingsForMeter(meter.id) : [];
+  const todayGeneration = readings.length > 0
+    ? parseFloat(readings.reduce((sum, r) => sum + r.generation, 0).toFixed(1))
+    : (latestReading ? parseFloat((latestReading.generation * 2.5).toFixed(1)) : 0);
+
   const forecast = ForecastingService.getForecastForProsumer(prosumer.id);
   const listings = db.getListings().filter((l) => l.prosumer_id === prosumer.id);
   const trades = db.getTrades({ sellerId: prosumer.id });
@@ -249,16 +280,16 @@ router.get('/prosumer/dashboard', optionalAuth, (req: AuthRequest, res: Response
     data: {
       prosumer,
       meter,
-      // Section 10.2 & 28: Gen 9 kWh, Cons 3 kWh, Surplus 6 kWh
       current_energy: {
-        generation: latestReading ? latestReading.generation : 9.0,
-        consumption: latestReading ? latestReading.consumption : 3.0,
-        surplus: latestReading ? latestReading.surplus : 6.0,
+        generation: latestReading ? latestReading.generation : 0.0,
+        consumption: latestReading ? latestReading.consumption : 0.0,
+        surplus: latestReading ? latestReading.surplus : 0.0,
       },
+      today_generation: todayGeneration,
       forecast: {
         predicted_generation: forecast.predicted_generation,
         predicted_consumption: forecast.predicted_consumption,
-        predicted_surplus: forecast.predicted_surplus, // 5.8 kWh (Section 28)
+        predicted_surplus: forecast.predicted_surplus,
         confidence: forecast.confidence_score,
       },
       listings,
@@ -305,21 +336,25 @@ router.get('/listings', (req: Request, res: Response) => {
 router.post('/listings', authenticate, requireRole('prosumer'), (req: AuthRequest, res: Response) => {
   let prosumer = db.getProsumerByUserId(req.user!.id);
   if (!prosumer) {
-    prosumer = db.createProsumer({
-      user_id: req.user!.id,
-      solar_capacity: 5.0,
-      reliability_score: 90,
-      total_energy_sold: 0,
-      total_earnings: 0,
-    });
+    return res.status(404).json({ success: false, error: 'Prosumer record not found' });
   }
 
   const { quantity, price, start_time, end_time, date, grid_zone_id } = req.body;
-  if (!quantity || !price || !start_time || !end_time) {
-    return res.status(400).json({ success: false, error: 'Quantity, price, start time, and end time are required' });
+  const qtyNum = Number(quantity);
+  const priceNum = Number(price);
+  if (!quantity || !price || !start_time || !end_time || isNaN(qtyNum) || isNaN(priceNum) || qtyNum <= 0 || priceNum <= 0) {
+    return res.status(400).json({ success: false, error: 'Valid positive quantity, price, start time, and end time are required' });
   }
 
   const meter = db.getMeterByUserId(req.user!.id);
+  const reading = meter ? db.getLatestReadingForMeter(meter.id) : undefined;
+  if (reading && reading.surplus <= 0) {
+    return res.status(400).json({
+      success: false,
+      error: `Cannot list energy during an energy deficit (Surplus: ${reading.surplus} kWh). Deficit energy cannot be sold.`,
+    });
+  }
+
   let zoneId = 'zone_a';
   if (grid_zone_id) {
     const matched = db.getGridZoneById(grid_zone_id);
@@ -330,8 +365,8 @@ router.post('/listings', authenticate, requireRole('prosumer'), (req: AuthReques
 
   const newListing = db.createListing({
     prosumer_id: prosumer.id,
-    quantity: Number(quantity),
-    price: Number(price),
+    quantity: qtyNum,
+    price: priceNum,
     start_time,
     end_time,
     date: date || new Date().toISOString().split('T')[0],

@@ -50,6 +50,15 @@ export const AuthModal: React.FC<Props> = ({
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+
+    if (step === 'register' && chosenRole === 'prosumer') {
+      const cap = Number(solarCapacity);
+      if (isNaN(cap) || cap <= 0) {
+        setError('Solar capacity must be a positive number greater than 0 kW');
+        return;
+      }
+    }
+
     setLoading(true);
     try {
       if (step === 'register') {
@@ -335,7 +344,10 @@ export const AuthModal: React.FC<Props> = ({
                 </label>
                 <input
                   type="number"
-                  step="0.5"
+                  min="0.1"
+                  step="0.1"
+                  required
+                  placeholder="e.g. 5.0"
                   value={solarCapacity}
                   onChange={(e) => setSolarCapacity(e.target.value)}
                   className="w-full px-4 py-3 rounded-2xl border border-[#E6E2D8] dark:border-[#2C2D29] bg-[#FAF8F5] dark:bg-[#111210] text-sm text-[#1A1B19] dark:text-[#EDEDE8] focus:outline-none focus:border-[#B45309]"

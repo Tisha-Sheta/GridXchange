@@ -1,12 +1,12 @@
 # GridXchange ⚡ — Decentralized P2P Renewable Energy Trading Platform
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-trycloudflare.com-2D6A4F?style=for-the-badge&logo=cloudflare)](https://funk-machine-developed-wiki.trycloudflare.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-trycloudflare.com-2D6A4F?style=for-the-badge&logo=cloudflare)](https://coordinated-currently-judy-courier.trycloudflare.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React%2019-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
 [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-> **Live Demo URL**: [https://funk-machine-developed-wiki.trycloudflare.com](https://funk-machine-developed-wiki.trycloudflare.com)
+> **Live Demo URL**: [https://coordinated-currently-judy-courier.trycloudflare.com](https://coordinated-currently-judy-courier.trycloudflare.com)
 
 ---
 

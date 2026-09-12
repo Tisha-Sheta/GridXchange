@@ -380,6 +380,62 @@ class Database {
         const raw = fs.readFileSync(this.dbPath, 'utf-8');
         const parsed = JSON.parse(raw);
         if (parsed && Array.isArray(parsed.users) && parsed.users.length > 0) {
+          // Ensure all prosumers have an associated smart meter and simulated readings
+          let stateModified = false;
+          if (Array.isArray(parsed.prosumers) && Array.isArray(parsed.smart_meters)) {
+            for (const prosumer of parsed.prosumers) {
+              let meter = parsed.smart_meters.find((m: SmartMeter) => m.user_id === prosumer.user_id);
+              if (!meter) {
+                const user = parsed.users.find((u: User) => u.id === prosumer.user_id);
+                const zoneId = user?.location
+                  ? (parsed.grid_zones?.find((z: GridZone) => z.zone_name === user.location || z.id === user.location)?.id || 'zone_a')
+                  : 'zone_a';
+                meter = {
+                  id: `meter_${prosumer.id}`,
+                  user_id: prosumer.user_id,
+                  meter_number: `M${String(parsed.smart_meters.length + 1).padStart(3, '0')}`,
+                  grid_zone_id: zoneId,
+                };
+                parsed.smart_meters.push(meter);
+                stateModified = true;
+              }
+
+              if (!Array.isArray(parsed.meter_readings)) {
+                parsed.meter_readings = [];
+              }
+              const readings = parsed.meter_readings.filter((r: MeterReading) => r.meter_id === meter.id);
+              if (readings.length === 0) {
+                const today = new Date().toISOString().split('T')[0];
+                const hours = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+                const sunlightCurve: Record<number, number> = {
+                  8: 0.25, 9: 0.45, 10: 0.70, 11: 0.85, 12: 0.95,
+                  13: 0.98, 14: 0.90, 15: 0.78, 16: 0.55, 17: 0.30,
+                };
+                const safeCapacity = Math.max(0, prosumer.solar_capacity || 5.0);
+                for (const h of hours) {
+                  const fraction = sunlightCurve[h] || 0.5;
+                  const gen = Math.max(0, Math.min(safeCapacity, parseFloat((safeCapacity * fraction).toFixed(1))));
+                  const baseCons = safeCapacity * 0.30;
+                  const offset = (h === 8 || h === 9 || h === 13 || h === 14) ? 0.3 : (h === 12 || h === 16) ? -0.2 : 0.0;
+                  const cons = Math.max(0, parseFloat((baseCons + offset).toFixed(1)));
+                  const surplus = parseFloat((gen - cons).toFixed(1));
+                  parsed.meter_readings.push({
+                    id: `mr_${meter.id}_${h}`,
+                    meter_id: meter.id,
+                    timestamp: `${today}T${String(h).padStart(2, '0')}:00:00.000Z`,
+                    generation: gen,
+                    consumption: cons,
+                    surplus: surplus,
+                  });
+                }
+                stateModified = true;
+              }
+            }
+          }
+
+          if (stateModified) {
+            this.saveState(parsed);
+          }
           return parsed;
         }
       }
@@ -512,6 +568,14 @@ class Database {
     return this.state.smart_meters.find((m) => m.id === id);
   }
 
+  public createSmartMeter(data: Omit<SmartMeter, 'id'>): SmartMeter {
+    const id = `meter_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`;
+    const meter: SmartMeter = { ...data, id };
+    this.state.smart_meters.push(meter);
+    this.saveState();
+    return meter;
+  }
+
   public getReadingsForMeter(meterId: string): MeterReading[] {
     return this.state.meter_readings.filter((r) => r.meter_id === meterId);
   }
@@ -519,15 +583,69 @@ class Database {
   public getLatestReadingForMeter(meterId: string): MeterReading | undefined {
     const readings = this.getReadingsForMeter(meterId);
     if (readings.length === 0) return undefined;
+    const hour14 = readings.find((r) => r.timestamp.includes('T14:00:00'));
+    if (hour14) return hour14;
     return readings[readings.length - 1];
   }
 
   public addMeterReading(data: Omit<MeterReading, 'id'>): MeterReading {
-    const id = `mr_${Date.now()}`;
+    const id = `mr_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`;
     const reading: MeterReading = { ...data, id };
     this.state.meter_readings.push(reading);
     this.saveState();
     return reading;
+  }
+
+  public generateSimulatedReadingsForMeter(meterId: string, solarCapacity: number): MeterReading[] {
+    const today = new Date().toISOString().split('T')[0];
+    const hours = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+    
+    // Sunlight irradiance fraction curve by hour (0.0 to 1.0)
+    const sunlightCurve: Record<number, number> = {
+      8: 0.25,
+      9: 0.45,
+      10: 0.70,
+      11: 0.85,
+      12: 0.95,
+      13: 0.98,
+      14: 0.90,
+      15: 0.78,
+      16: 0.55,
+      17: 0.30,
+    };
+
+    const newReadings: MeterReading[] = [];
+    const safeCapacity = Math.max(0, solarCapacity);
+
+    for (const h of hours) {
+      const fraction = sunlightCurve[h] || 0.5;
+      // Generation: varies by sunlight, non-negative, never exceeds system capacity
+      const gen = Math.max(0, Math.min(safeCapacity, parseFloat((safeCapacity * fraction).toFixed(1))));
+      
+      // Consumption: non-negative, independently simulated household load
+      const baseCons = safeCapacity * 0.30;
+      const offset = (h === 8 || h === 9 || h === 13 || h === 14) ? 0.3 : (h === 12 || h === 16) ? -0.2 : 0.0;
+      const cons = Math.max(0, parseFloat((baseCons + offset).toFixed(1)));
+      
+      // Surplus: generation - consumption (negative means deficit)
+      const surplus = parseFloat((gen - cons).toFixed(1));
+
+      const reading: MeterReading = {
+        id: `mr_${meterId}_${h}`,
+        meter_id: meterId,
+        timestamp: `${today}T${String(h).padStart(2, '0')}:00:00.000Z`,
+        generation: gen,
+        consumption: cons,
+        surplus: surplus,
+      };
+      newReadings.push(reading);
+    }
+
+    // Remove any previous readings for this meter and persist new ones
+    this.state.meter_readings = this.state.meter_readings.filter((r) => r.meter_id !== meterId);
+    this.state.meter_readings.push(...newReadings);
+    this.saveState();
+    return newReadings;
   }
 
   // Forecasts

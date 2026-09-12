@@ -12,6 +12,8 @@ export default defineConfig(() => {
       },
     },
     server: {
+      // Allow tunnel hosts like trycloudflare.com
+      allowedHosts: true as const,
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       hmr: process.env.DISABLE_HMR !== 'true',
       watch:
@@ -23,6 +25,7 @@ export default defineConfig(() => {
                 '**/server/data/database.json',
                 '**/*.json',
                 '**/test_*.mjs',
+                '**/cloudflared.exe',
               ],
             },
     },

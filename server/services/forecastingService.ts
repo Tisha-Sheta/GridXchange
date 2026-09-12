@@ -15,7 +15,7 @@ export class ForecastingService {
     }
 
     const prosumer = db.getProsumerById(prosumerId);
-    const capacity = prosumer ? prosumer.solar_capacity : 8.0;
+    const capacity = prosumer ? Math.max(0, prosumer.solar_capacity) : 8.0;
 
     // Solar irradiance curve model peaking at 12:00 - 14:00
     let solarFraction = 0.8;
@@ -24,8 +24,8 @@ export class ForecastingService {
     else if (targetHour === 15) solarFraction = 0.78;
     else if (targetHour >= 16) solarFraction = 0.55;
 
-    const predictedGeneration = parseFloat((capacity * solarFraction).toFixed(1));
-    const predictedConsumption = parseFloat((capacity * 0.3).toFixed(1));
+    const predictedGeneration = Math.max(0, Math.min(capacity, parseFloat((capacity * solarFraction).toFixed(1))));
+    const predictedConsumption = Math.max(0, parseFloat((capacity * 0.3).toFixed(1)));
     const predictedSurplus = parseFloat((predictedGeneration - predictedConsumption).toFixed(1));
 
     const today = new Date().toISOString().split('T')[0];
@@ -50,35 +50,28 @@ export class ForecastingService {
     const prosumer = db.getProsumerById(prosumerId);
     const meter = prosumer ? db.getMeterByUserId(prosumer.user_id) : undefined;
     const readings = meter ? db.getReadingsForMeter(meter.id) : [];
+    const capacity = prosumer ? Math.max(0, prosumer.solar_capacity) : 6.0;
 
     return hours.map((h) => {
       const timeLabel = `${String(h).padStart(2, '0')}:00`;
       const reading = readings.find((r) => r.timestamp.includes(`T${String(h).padStart(2, '0')}`));
       
       // Hourly solar profile
-      let predictedGen = 0;
-      let predictedSurplus = 0;
-      if (prosumerId === 'p_001') {
-        const p1ForecastMap: Record<number, { gen: number; surplus: number }> = {
-          8: { gen: 2.0, surplus: 0.1 },
-          9: { gen: 4.0, surplus: 1.8 },
-          10: { gen: 6.3, surplus: 3.9 },
-          11: { gen: 8.2, surplus: 5.7 },
-          12: { gen: 9.6, surplus: 6.5 },
-          13: { gen: 9.3, surplus: 6.3 },
-          14: { gen: 8.8, surplus: 5.8 }, // Exactly 5.8 kWh forecast at 2-3 PM!
-          15: { gen: 7.5, surplus: 4.7 },
-          16: { gen: 5.2, surplus: 2.6 },
-          17: { gen: 3.0, surplus: 0.5 },
-        };
-        const f = p1ForecastMap[h] || { gen: 4, surplus: 2 };
-        predictedGen = f.gen;
-        predictedSurplus = f.surplus;
-      } else {
-        const capacity = prosumer?.solar_capacity || 6.0;
-        predictedGen = parseFloat((capacity * 0.75).toFixed(1));
-        predictedSurplus = parseFloat((predictedGen * 0.6).toFixed(1));
-      }
+      let solarFrac = 0.75;
+      if (h === 8) solarFrac = 0.20;
+      else if (h === 9) solarFrac = 0.40;
+      else if (h === 10) solarFrac = 0.63;
+      else if (h === 11) solarFrac = 0.82;
+      else if (h === 12) solarFrac = 0.96;
+      else if (h === 13) solarFrac = 0.93;
+      else if (h === 14) solarFrac = 0.88;
+      else if (h === 15) solarFrac = 0.75;
+      else if (h === 16) solarFrac = 0.52;
+      else if (h === 17) solarFrac = 0.30;
+
+      const predictedGen = Math.max(0, Math.min(capacity, parseFloat((capacity * solarFrac).toFixed(1))));
+      const predictedCons = Math.max(0, parseFloat((capacity * 0.3).toFixed(1)));
+      const predictedSurplus = parseFloat((predictedGen - predictedCons).toFixed(1));
 
       return {
         hour: timeLabel,

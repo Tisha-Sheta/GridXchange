@@ -44,9 +44,9 @@ export const ConsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
   >('overview');
 
   // Find Energy Form inputs
-  const [reqQty, setReqQty] = useState(5.0);
-  const [reqTimeSlot, setReqTimeSlot] = useState('2:00 PM — 3:00 PM');
-  const [reqMaxPrice, setReqMaxPrice] = useState(8.0);
+  const [reqQty, setReqQty] = useState(0);
+  const [reqTimeSlot, setReqTimeSlot] = useState('');
+  const [reqMaxPrice, setReqMaxPrice] = useState(0);
 
   // Match State
   const [matches, setMatches] = useState<MatchRecord[]>([]);
@@ -185,41 +185,37 @@ export const ConsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
         <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
           <button
             onClick={() => setCurrentView('overview')}
-            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${
-              currentView === 'overview'
+            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${currentView === 'overview'
                 ? 'bg-[#1A1B19] text-white dark:bg-[#EDEDE8] dark:text-[#1A1B19] font-bold'
                 : 'hover:bg-[#EFECE4] dark:hover:bg-[#1E1F1C] text-[#686B63] dark:text-[#8D9188]'
-            }`}
+              }`}
           >
             Overview
           </button>
           <button
             onClick={() => setCurrentView('find_form')}
-            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${
-              currentView === 'find_form' || currentView === 'matches'
+            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${currentView === 'find_form' || currentView === 'matches'
                 ? 'bg-[#1A1B19] text-white dark:bg-[#EDEDE8] dark:text-[#1A1B19] font-bold'
                 : 'hover:bg-[#EFECE4] dark:hover:bg-[#1E1F1C] text-[#686B63] dark:text-[#8D9188]'
-            }`}
+              }`}
           >
             Find Energy
           </button>
           <button
             onClick={() => setCurrentView('active_trades')}
-            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${
-              currentView === 'active_trades'
+            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${currentView === 'active_trades'
                 ? 'bg-[#1A1B19] text-white dark:bg-[#EDEDE8] dark:text-[#1A1B19] font-bold'
                 : 'hover:bg-[#EFECE4] dark:hover:bg-[#1E1F1C] text-[#686B63] dark:text-[#8D9188]'
-            }`}
+              }`}
           >
             Active Trades ({activeTrades.length})
           </button>
           <button
             onClick={() => setCurrentView('history')}
-            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${
-              currentView === 'history'
+            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${currentView === 'history'
                 ? 'bg-[#1A1B19] text-white dark:bg-[#EDEDE8] dark:text-[#1A1B19] font-bold'
                 : 'hover:bg-[#EFECE4] dark:hover:bg-[#1E1F1C] text-[#686B63] dark:text-[#8D9188]'
-            }`}
+              }`}
           >
             Trade History
           </button>
@@ -233,11 +229,10 @@ export const ConsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
           )}
           <button
             onClick={() => setCurrentView('profile')}
-            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${
-              currentView === 'profile'
+            className={`px-3.5 py-1.5 rounded-full transition-colors cursor-pointer ${currentView === 'profile'
                 ? 'bg-[#1A1B19] text-white dark:bg-[#EDEDE8] dark:text-[#1A1B19] font-bold'
                 : 'hover:bg-[#EFECE4] dark:hover:bg-[#1E1F1C] text-[#686B63] dark:text-[#8D9188]'
-            }`}
+              }`}
           >
             Profile
           </button>
@@ -343,7 +338,7 @@ export const ConsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                     Lifetime Savings
                   </span>
                   <div className="font-mono text-3xl font-extrabold text-[#B45309] dark:text-[#E5A93C]">
-                    ₹{roleData?.total_savings || 427.5}
+                    ₹{roleData?.total_savings ?? 0}
                   </div>
                 </div>
                 <div className="mt-4 pt-3 border-t border-[#EFECE4] dark:border-[#262723] text-xs text-[#686B63] dark:text-[#8D9188]">
@@ -430,11 +425,10 @@ export const ConsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                       type="button"
                       key={qty}
                       onClick={() => setReqQty(qty)}
-                      className={`px-3 py-1 rounded-full text-xs font-mono transition-colors cursor-pointer ${
-                        reqQty === qty
+                      className={`px-3 py-1 rounded-full text-xs font-mono transition-colors cursor-pointer ${reqQty === qty
                           ? 'bg-[#1A1B19] dark:bg-[#EDEDE8] text-white dark:text-[#1A1B19] font-bold'
                           : 'bg-[#F3EFE8] dark:bg-[#1E1F1C] text-[#686B63] hover:bg-[#E5E0D4]'
-                      }`}
+                        }`}
                     >
                       {qty} kWh
                     </button>
@@ -561,11 +555,10 @@ export const ConsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                 return (
                   <div
                     key={m.id || idx}
-                    className={`p-6 sm:p-8 rounded-3xl transition-all relative ${
-                      isBestMatch
+                    className={`p-6 sm:p-8 rounded-3xl transition-all relative ${isBestMatch
                         ? 'bg-[#FFFFFF] dark:bg-[#171816] border-2 border-[#1A1B19] dark:border-[#EDEDE8] shadow-lg'
                         : 'bg-[#FFFFFF] dark:bg-[#171816] border border-[#E6E2D8] dark:border-[#2A2B27] shadow-xs hover:border-[#1A1B19] dark:hover:border-[#EDEDE8]'
-                    }`}
+                      }`}
                   >
                     {/* Top Badges */}
                     <div className="flex items-center justify-between gap-2 mb-4">
@@ -659,19 +652,18 @@ export const ConsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                         <button
                           onClick={() => handleConfirmTrade(m)}
                           disabled={confirming}
-                          className={`w-full py-4 rounded-full font-heading font-extrabold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs hover:shadow-md ${
-                            isBestMatch
+                          className={`w-full py-4 rounded-full font-heading font-extrabold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs hover:shadow-md ${isBestMatch
                               ? 'bg-[#1A1B19] dark:bg-[#EDEDE8] hover:bg-[#2C2D29] dark:hover:bg-[#FFFFFF] text-white dark:text-[#1A1B19]'
                               : 'border-2 border-[#1A1B19] dark:border-[#EDEDE8] text-[#1A1B19] dark:text-[#EDEDE8] hover:bg-[#1A1B19] hover:text-white dark:hover:bg-[#EDEDE8] dark:hover:text-[#1A1B19]'
-                          }`}
+                            }`}
                         >
                           <Zap className="w-4 h-4 fill-current text-[#E5A93C]" />
                           <span>
                             {confirming && isSelected
                               ? 'Scheduling Trade...'
                               : isBestMatch
-                              ? `Confirm & Schedule Best Match (${sellerName})`
-                              : `Select & Trade with ${sellerName}`}
+                                ? `Confirm & Schedule Best Match (${sellerName})`
+                                : `Select & Trade with ${sellerName}`}
                           </span>
                           <ArrowRight className="w-4 h-4" />
                         </button>
