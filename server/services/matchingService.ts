@@ -2,6 +2,7 @@ import { db } from '../db';
 import { EnergyRequirement, EnergyListing, MatchRecord, MatchScoreReason } from '../../src/types';
 import { ForecastingService } from './forecastingService';
 import { PricingService } from './pricingService';
+import { calculateHaversineDistanceKm } from '../../src/utils/geoUtils';
 
 export class MatchingService {
   /**
@@ -25,6 +26,9 @@ export class MatchingService {
   public static rankMatches(requirementId: string): MatchRecord[] {
     const requirement = db.getRequirementById(requirementId);
     if (!requirement) return [];
+
+    const consumer = db.getConsumerById(requirement.consumer_id);
+    const consumerUser = consumer ? db.findUserById(consumer.user_id) : undefined;
 
     const availableListings = db.getListings({ status: 'Available' });
     const matches: MatchRecord[] = [];
@@ -62,15 +66,52 @@ export class MatchingService {
       const priceDiffRatio = (requirement.max_price - pricing.final_price) / requirement.max_price;
       const priceScore = Math.min(100, Math.max(25, Math.round(80 + priceDiffRatio * 100)));
 
-      // D. Distance / Locality Score
-      // In same zone or preferred zone = 100, adjacent = 75, remote = 50
-      const isNearby = listing.grid_zone_id === 'zone_a' || (requirement.preferred_zone && requirement.preferred_zone.includes(zone?.zone_name || ''));
-      const localityScore = isNearby ? 95 : 70;
+      // D. Distance / Locality Score (15% Factor)
+      // If numeric coordinates exist for both consumer & prosumer, calculate physical Haversine distance
+      let localityScore = 70;
+      let distanceKm: number | null = null;
+      const hasConsumerCoords =
+        consumerUser?.latitude !== undefined &&
+        consumerUser?.longitude !== undefined &&
+        !isNaN(consumerUser.latitude) &&
+        !isNaN(consumerUser.longitude);
+      const hasProsumerCoords =
+        prosumerUser?.latitude !== undefined &&
+        prosumerUser?.longitude !== undefined &&
+        !isNaN(prosumerUser.latitude) &&
+        !isNaN(prosumerUser.longitude);
+
+      if (hasConsumerCoords && hasProsumerCoords) {
+        distanceKm = calculateHaversineDistanceKm(
+          consumerUser!.latitude!,
+          consumerUser!.longitude!,
+          prosumerUser!.latitude!,
+          prosumerUser!.longitude!
+        );
+
+        if (distanceKm <= 2.0) {
+          localityScore = 98;
+        } else if (distanceKm <= 5.0) {
+          localityScore = 90;
+        } else if (distanceKm <= 10.0) {
+          localityScore = 80;
+        } else if (distanceKm <= 20.0) {
+          localityScore = 65;
+        } else {
+          localityScore = Math.max(30, Math.round(65 - (distanceKm - 20) * 1.2));
+        }
+      } else {
+        // Graceful fallback to zone-based proximity if coordinates are not available
+        const isNearby =
+          listing.grid_zone_id === 'zone_a' ||
+          (requirement.preferred_zone && requirement.preferred_zone.includes(zone?.zone_name || ''));
+        localityScore = isNearby ? 95 : 70;
+      }
 
       // E. Reliability Score (from prosumer table)
       const reliabilityScore = prosumer ? prosumer.reliability_score : 80;
 
-      // F. Grid Condition Score
+      // F. Grid Condition Score (5% Factor - Zone Congestion)
       let gridScore = 50;
       if (zone?.congestion_level === 'Low') gridScore = 100;
       else if (zone?.congestion_level === 'Medium') gridScore = 70;
@@ -88,6 +129,11 @@ export class MatchingService {
       const finalScore = Math.min(99, Math.max(50, Math.round(rawScore)));
 
       // Explainable Reason Checklist (Section 14.3)
+      const localityDetail =
+        distanceKm !== null
+          ? `${distanceKm} km away (${prosumerUser?.locality || prosumerUser?.city || 'Nearby'})`
+          : `${prosumerUser?.location || 'Zone ' + (zone?.zone_name || 'A')}`;
+
       const reasons: MatchScoreReason[] = [
         {
           label: 'Enough predicted energy',
@@ -101,8 +147,8 @@ export class MatchingService {
         },
         {
           label: 'Nearby',
-          passed: localityScore >= 80,
-          detail: `${prosumerUser?.location || 'Zone ' + (zone?.zone_name || 'A')}`,
+          passed: localityScore >= 75,
+          detail: localityDetail,
         },
         {
           label: 'Competitive price',

@@ -39,10 +39,9 @@ async function runTests() {
   }, c001Token);
   console.log('Created Requirement ID:', reqRes.requirement.id, '| Matches Found:', reqRes.matches.length);
 
-  console.log('\n=== 4. Fetch Available Prosumer Listings ===');
   const listings = await req('/listings?status=Available', 'GET', null, c001Token);
   console.log('Available listings count:', listings.length);
-  const targetListing = listings[0] || { id: 'lst_001', price: 7.5, quantity: 5.0, prosumer_id: 'p_001' };
+  const targetListing = listings.find((l) => l.prosumer_id === 'p_001') || listings[0] || { id: 'lst_001', price: 7.5, quantity: 5.0, prosumer_id: 'p_001' };
 
   console.log('\n=== 5. C001 Confirms Trade with Prosumer P001 ===');
   const confirmedTrade = await req('/trades/confirm', 'POST', {

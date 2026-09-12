@@ -14,6 +14,11 @@ export interface User {
   email: string;
   phone: string;
   location: string;
+  city?: string;
+  locality?: string;
+  latitude?: number;
+  longitude?: number;
+  grid_zone?: string;
   role: UserRole;
   status: UserStatus;
   created_at: string;

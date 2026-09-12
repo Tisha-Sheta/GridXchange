@@ -71,12 +71,27 @@ export function requireRole(...roles: string[]) {
   };
 }
 
+import { assignGridZoneFromCoords, formatLocationString } from '../../src/utils/geoUtils';
+
 // ----------------------------------------------------
 // 1. AUTHENTICATION & USERS (Sections 8 & 22)
 // ----------------------------------------------------
 
 router.post('/auth/register', (req: Request, res: Response) => {
-  const { name, email, password, phone, location, role, solar_capacity } = req.body;
+  const {
+    name,
+    email,
+    password,
+    phone,
+    location,
+    city,
+    locality,
+    latitude,
+    longitude,
+    grid_zone,
+    role,
+    solar_capacity,
+  } = req.body;
 
   if (!name || !email || !password || !role) {
     return res.status(400).json({ success: false, error: 'Name, email, password, and role are required' });
@@ -101,12 +116,28 @@ router.post('/auth/register', (req: Request, res: Response) => {
     return res.status(400).json({ success: false, error: 'An account with this email address already exists' });
   }
 
+  const numLat = latitude !== undefined && latitude !== null && !isNaN(Number(latitude)) ? Number(latitude) : undefined;
+  const numLng = longitude !== undefined && longitude !== null && !isNaN(Number(longitude)) ? Number(longitude) : undefined;
+  
+  // Deterministic automatic grid zone assignment from coordinates (with fallback)
+  const autoZone = numLat !== undefined && numLng !== undefined
+    ? assignGridZoneFromCoords(numLat, numLng)
+    : (grid_zone ? { id: grid_zone.toLowerCase().replace(' ', '_') as any, name: grid_zone as any, description: grid_zone } : { id: 'zone_a' as const, name: 'Zone A' as const, description: 'Default Zone A' });
+
+  const resolvedGridZone = grid_zone || autoZone.name;
+  const cleanLocation = location || formatLocationString(locality, city) || 'Vastrapur, Ahmedabad';
+
   const passwordHash = bcrypt.hashSync(password, 10);
   const newUser = db.createUser({
     name,
     email,
     phone: phone || '',
-    location: location || 'Zone A',
+    location: cleanLocation,
+    city: city || (cleanLocation.includes(',') ? cleanLocation.split(',')[1].trim() : 'Ahmedabad'),
+    locality: locality || (cleanLocation.includes(',') ? cleanLocation.split(',')[0].trim() : 'Vastrapur'),
+    latitude: numLat,
+    longitude: numLng,
+    grid_zone: resolvedGridZone,
     role,
     status: 'active',
     password_hash: passwordHash,
@@ -122,9 +153,9 @@ router.post('/auth/register', (req: Request, res: Response) => {
       total_earnings: 0,
     });
 
-    // Auto-create unique smart meter linked to this user
+    // Auto-create unique smart meter linked to this user's auto-assigned grid zone
     const meterNumber = `M${String(db.getState().smart_meters.length + 1).padStart(3, '0')}`;
-    const gridZone = db.getGridZoneById(newUser.location)?.id || 'zone_a';
+    const gridZone = db.getGridZoneById(resolvedGridZone)?.id || db.getGridZoneById(newUser.location)?.id || 'zone_a';
     const smartMeter = db.createSmartMeter({
       user_id: newUser.id,
       meter_number: meterNumber,
@@ -148,7 +179,18 @@ router.post('/auth/register', (req: Request, res: Response) => {
   return res.json({
     success: true,
     data: {
-      user: { id: newUser.id, name: newUser.name, email: newUser.email, role: newUser.role },
+      user: {
+        id: newUser.id,
+        name: newUser.name,
+        email: newUser.email,
+        role: newUser.role,
+        location: newUser.location,
+        city: newUser.city,
+        locality: newUser.locality,
+        latitude: newUser.latitude,
+        longitude: newUser.longitude,
+        grid_zone: newUser.grid_zone,
+      },
       token,
     },
   });
@@ -178,7 +220,18 @@ router.post('/auth/login', (req: Request, res: Response) => {
   return res.json({
     success: true,
     data: {
-      user: { id: user.id, name: user.name, email: user.email, role: user.role, location: user.location },
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        location: user.location,
+        city: user.city,
+        locality: user.locality,
+        latitude: user.latitude,
+        longitude: user.longitude,
+        grid_zone: user.grid_zone,
+      },
       token,
     },
   });
@@ -217,6 +270,11 @@ router.post('/auth/demo-login', (req: Request, res: Response) => {
         email: targetUser.email,
         role: targetUser.role,
         location: targetUser.location,
+        city: targetUser.city,
+        locality: targetUser.locality,
+        latitude: targetUser.latitude,
+        longitude: targetUser.longitude,
+        grid_zone: targetUser.grid_zone,
       },
       token,
     },
@@ -247,8 +305,17 @@ router.get('/users/profile', authenticate, (req: AuthRequest, res: Response) => 
 });
 
 router.put('/users/profile', authenticate, (req: AuthRequest, res: Response) => {
-  const { name, phone, location } = req.body;
-  const updated = db.updateUser(req.user!.id, { name, phone, location });
+  const { name, phone, location, city, locality, latitude, longitude, grid_zone } = req.body;
+  const updated = db.updateUser(req.user!.id, {
+    name,
+    phone,
+    location,
+    city,
+    locality,
+    latitude: latitude !== undefined ? Number(latitude) : undefined,
+    longitude: longitude !== undefined ? Number(longitude) : undefined,
+    grid_zone,
+  });
   res.json({ success: true, data: updated });
 });
 

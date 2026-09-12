@@ -123,7 +123,7 @@ export const ConsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
         max_price: reqMaxPrice,
         start_time: '14:00',
         end_time: '15:00',
-        preferred_zone: user?.location || 'Zone A',
+        preferred_zone: user?.grid_zone || 'Zone A',
       });
 
       const matchList = res.matches && res.matches.length > 0
@@ -928,16 +928,20 @@ export const ConsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
                 <span className="font-bold text-[#1A1B19] dark:text-[#EDEDE8]">{user?.id || 'usr_c001'}</span>
               </div>
               <div className="p-4 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1D1A]">
-                <span className="text-[#8D9188] block text-[10px] uppercase">Smart Meter</span>
-                <span className="font-bold text-[#1A1B19] dark:text-[#EDEDE8]">MTR-C001 (Active)</span>
+                <span className="text-[#8D9188] block text-[10px] uppercase">Physical Location</span>
+                <span className="font-bold text-[#1A1B19] dark:text-[#EDEDE8] truncate block" title={user?.location}>
+                  {user?.location || 'Vastrapur, Ahmedabad'}
+                </span>
               </div>
               <div className="p-4 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1D1A]">
                 <span className="text-[#8D9188] block text-[10px] uppercase">Distribution Feeder</span>
-                <span className="font-bold text-[#1A1B19] dark:text-[#EDEDE8]">{user?.location || 'Zone A'}</span>
+                <span className="font-bold text-[#1A1B19] dark:text-[#EDEDE8]">{user?.grid_zone || 'Zone A'}</span>
               </div>
               <div className="p-4 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1D1A]">
                 <span className="text-[#8D9188] block text-[10px] uppercase">Lifetime Traded</span>
-                <span className="font-bold text-[#2D6A4F] dark:text-[#52B788]">142.5 kWh</span>
+                <span className="font-bold text-[#2D6A4F] dark:text-[#52B788]">
+                  {roleData?.total_energy_purchased ? `${roleData.total_energy_purchased} kWh` : '142.5 kWh'}
+                </span>
               </div>
             </div>
           </div>

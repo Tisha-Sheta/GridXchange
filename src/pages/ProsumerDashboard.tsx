@@ -102,7 +102,9 @@ export const ProsumerDashboard: React.FC<Props> = ({ onTriggerRebalanceDemo, onN
         price: sellingPrice,
         start_time: '14:00',
         end_time: '15:00',
-        grid_zone_id: user?.location || 'zone_a',
+        grid_zone_id: user?.grid_zone
+          ? user.grid_zone.toLowerCase().replace(' ', '_')
+          : (dashboardData?.smartMeter?.grid_zone_id || 'zone_a'),
       });
       await loadData();
       setCurrentView('listing_created');

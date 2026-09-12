@@ -18,7 +18,11 @@ async function runTests() {
       email: `p101_${Date.now()}@gridxchange.io`,
       password: 'password123',
       phone: '+91 99887 76655',
-      location: 'Sarabhai Estate, Zone A',
+      location: 'Sarabhai Estate, Vastrapur, Ahmedabad',
+      city: 'Ahmedabad',
+      locality: 'Vastrapur',
+      latitude: 23.0360,
+      longitude: 72.5280,
       role: 'prosumer',
       solar_capacity: 12.0,
     }),
@@ -29,15 +33,21 @@ async function runTests() {
   }
   const prosumerUser = regProsumerData.data.user;
   const prosumerToken = regProsumerData.data.token;
-  console.log(`Prosumer registered successfully: ${prosumerUser.id} (${prosumerUser.name})`);
+  console.log(`Prosumer registered successfully: ${prosumerUser.id} (${prosumerUser.name}) | Grid Zone: ${prosumerUser.grid_zone} | Coords: (${prosumerUser.latitude}, ${prosumerUser.longitude})`);
 
-  // Verify Prosumer was actually inserted into database.json
+  // Verify Prosumer was actually inserted into database.json with numeric coords and grid zone
   const dbAfterReg = JSON.parse(fs.readFileSync('server/data/database.json', 'utf-8'));
   const foundUserInDb = dbAfterReg.users.find((u) => u.id === prosumerUser.id);
   if (!foundUserInDb) {
     throw new Error('FAILED: Registered prosumer NOT found in database.json!');
   }
-  console.log(`VERIFIED: User ${prosumerUser.id} is persisted on disk in database.json users table.`);
+  if (typeof foundUserInDb.latitude !== 'number' || typeof foundUserInDb.longitude !== 'number') {
+    throw new Error('FAILED: Latitude and Longitude must be stored as numeric values in database.json!');
+  }
+  if (!foundUserInDb.grid_zone) {
+    throw new Error('FAILED: Grid Zone must be automatically assigned and stored in database.json!');
+  }
+  console.log(`VERIFIED: User ${prosumerUser.id} is persisted on disk with numeric coords (${foundUserInDb.latitude}, ${foundUserInDb.longitude}) and auto-assigned grid zone ${foundUserInDb.grid_zone}.`);
 
   // 2. Prosumer Creates Energy Listing
   console.log('\n=== STEP 3: PROSUMER CREATES ENERGY LISTING ===');
@@ -80,7 +90,11 @@ async function runTests() {
       email: `c101_${Date.now()}@gridxchange.io`,
       password: 'password123',
       phone: '+91 91234 56789',
-      location: 'Palm Meadows, Zone A',
+      location: 'Palm Meadows, Bodakdev, Ahmedabad',
+      city: 'Ahmedabad',
+      locality: 'Bodakdev',
+      latitude: 23.0390,
+      longitude: 72.5130,
       role: 'consumer',
     }),
   });
@@ -90,15 +104,18 @@ async function runTests() {
   }
   const consumerUser = regConsumerData.data.user;
   const consumerToken = regConsumerData.data.token;
-  console.log(`Consumer registered successfully: ${consumerUser.id} (${consumerUser.name})`);
+  console.log(`Consumer registered successfully: ${consumerUser.id} (${consumerUser.name}) | Grid Zone: ${consumerUser.grid_zone} | Coords: (${consumerUser.latitude}, ${consumerUser.longitude})`);
 
-  // Verify Consumer was inserted into database.json
+  // Verify Consumer was inserted into database.json with numeric coordinates
   const dbAfterConsumer = JSON.parse(fs.readFileSync('server/data/database.json', 'utf-8'));
   const foundConsumerInDb = dbAfterConsumer.users.find((u) => u.id === consumerUser.id);
   if (!foundConsumerInDb) {
     throw new Error('FAILED: Registered consumer NOT found in database.json!');
   }
-  console.log(`VERIFIED: Consumer ${consumerUser.id} is persisted on disk in database.json.`);
+  if (typeof foundConsumerInDb.latitude !== 'number' || typeof foundConsumerInDb.longitude !== 'number') {
+    throw new Error('FAILED: Consumer coordinates must be stored as numeric values in database.json!');
+  }
+  console.log(`VERIFIED: Consumer ${consumerUser.id} is persisted on disk in database.json with numeric coords (${foundConsumerInDb.latitude}, ${foundConsumerInDb.longitude}).`);
 
   // 4. Consumer Creates Requirement & Finds Energy
   console.log('\n=== STEP 5: CONSUMER FINDS ENERGY (MATCHING SYSTEM) ===');

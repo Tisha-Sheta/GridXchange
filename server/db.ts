@@ -59,7 +59,12 @@ export function createInitialSeedData(): DatabaseState {
       name: 'Grid Dispatch Operator (Admin)',
       email: 'admin@gridxchange.io',
       phone: '+91 98200 11000',
-      location: 'Regional Energy Dispatch Center, Sector 4',
+      location: 'Regional Energy Dispatch Center, Sector 4, Ahmedabad',
+      city: 'Ahmedabad',
+      locality: 'Sector 4',
+      latitude: 23.0300,
+      longitude: 72.5500,
+      grid_zone: 'Zone A',
       role: 'admin',
       status: 'active',
       created_at: new Date(Date.now() - 86400000 * 30).toISOString(),
@@ -70,7 +75,12 @@ export function createInitialSeedData(): DatabaseState {
       name: 'Ananya Sharma (C001)',
       email: 'c001@gridxchange.io',
       phone: '+91 98450 23456',
-      location: 'Greenwood Residences, Zone A',
+      location: 'Greenwood Residences, Vastrapur, Ahmedabad',
+      city: 'Ahmedabad',
+      locality: 'Vastrapur',
+      latitude: 23.0350,
+      longitude: 72.5293,
+      grid_zone: 'Zone A',
       role: 'consumer',
       status: 'active',
       created_at: new Date(Date.now() - 86400000 * 15).toISOString(),
@@ -81,7 +91,12 @@ export function createInitialSeedData(): DatabaseState {
       name: 'SunPower Apex (P001)',
       email: 'p001@gridxchange.io',
       phone: '+91 97110 34567',
-      location: 'Apex Villa Rooftop Solar, Zone A',
+      location: 'Apex Villa Rooftop Solar, Bodakdev, Ahmedabad',
+      city: 'Ahmedabad',
+      locality: 'Bodakdev',
+      latitude: 23.0384,
+      longitude: 72.5122,
+      grid_zone: 'Zone A',
       role: 'prosumer',
       status: 'active',
       created_at: new Date(Date.now() - 86400000 * 20).toISOString(),
@@ -92,7 +107,12 @@ export function createInitialSeedData(): DatabaseState {
       name: 'SolarReserve Beta (P002)',
       email: 'p002@gridxchange.io',
       phone: '+91 98110 45678',
-      location: 'Beta Heights Microgrid, Zone B',
+      location: 'Beta Heights Microgrid, Navrangpura, Ahmedabad',
+      city: 'Ahmedabad',
+      locality: 'Navrangpura',
+      latitude: 23.0373,
+      longitude: 72.5613,
+      grid_zone: 'Zone B',
       role: 'prosumer',
       status: 'active',
       created_at: new Date(Date.now() - 86400000 * 18).toISOString(),
@@ -103,7 +123,12 @@ export function createInitialSeedData(): DatabaseState {
       name: 'HelioGrid Gamma (P003)',
       email: 'p003@gridxchange.io',
       phone: '+91 99220 56789',
-      location: 'Gamma Industrial Cluster, Zone C',
+      location: 'Gamma Industrial Cluster, Changodar, Ahmedabad',
+      city: 'Ahmedabad',
+      locality: 'Changodar',
+      latitude: 22.9200,
+      longitude: 72.4350,
+      grid_zone: 'Zone C',
       role: 'prosumer',
       status: 'active',
       created_at: new Date(Date.now() - 86400000 * 14).toISOString(),
@@ -382,14 +407,41 @@ class Database {
         if (parsed && Array.isArray(parsed.users) && parsed.users.length > 0) {
           // Ensure all prosumers have an associated smart meter and simulated readings
           let stateModified = false;
+
+          // Ensure all users have coordinates, city, locality, and grid_zone
+          const seedInitial = createInitialSeedData();
+          for (const u of parsed.users) {
+            const seedMatch = seedInitial.users.find((s) => s.id === u.id || s.email === u.email);
+            if (seedMatch) {
+              if (u.latitude === undefined) { u.latitude = seedMatch.latitude; stateModified = true; }
+              if (u.longitude === undefined) { u.longitude = seedMatch.longitude; stateModified = true; }
+              if (!u.city) { u.city = seedMatch.city; stateModified = true; }
+              if (!u.locality) { u.locality = seedMatch.locality; stateModified = true; }
+              if (!u.grid_zone) { u.grid_zone = seedMatch.grid_zone; stateModified = true; }
+              if (!u.location || u.location === 'Zone A' || u.location === 'Zone B' || u.location === 'Zone C') {
+                u.location = seedMatch.location;
+                stateModified = true;
+              }
+            } else {
+              if (u.latitude === undefined) { u.latitude = 23.0350; stateModified = true; }
+              if (u.longitude === undefined) { u.longitude = 72.5293; stateModified = true; }
+              if (!u.city) { u.city = 'Ahmedabad'; stateModified = true; }
+              if (!u.locality) { u.locality = 'Vastrapur'; stateModified = true; }
+              if (!u.grid_zone) { u.grid_zone = 'Zone A'; stateModified = true; }
+              if (!u.location) { u.location = `${u.locality}, ${u.city}`; stateModified = true; }
+            }
+          }
+
           if (Array.isArray(parsed.prosumers) && Array.isArray(parsed.smart_meters)) {
             for (const prosumer of parsed.prosumers) {
               let meter = parsed.smart_meters.find((m: SmartMeter) => m.user_id === prosumer.user_id);
               if (!meter) {
                 const user = parsed.users.find((u: User) => u.id === prosumer.user_id);
-                const zoneId = user?.location
-                  ? (parsed.grid_zones?.find((z: GridZone) => z.zone_name === user.location || z.id === user.location)?.id || 'zone_a')
-                  : 'zone_a';
+                const zoneId = user?.grid_zone
+                  ? (parsed.grid_zones?.find((z: GridZone) => z.zone_name === user.grid_zone || z.id === user.grid_zone.toLowerCase().replace(' ', '_'))?.id || 'zone_a')
+                  : (user?.location
+                      ? (parsed.grid_zones?.find((z: GridZone) => z.zone_name === user.location || z.id === user.location)?.id || 'zone_a')
+                      : 'zone_a');
                 meter = {
                   id: `meter_${prosumer.id}`,
                   user_id: prosumer.user_id,

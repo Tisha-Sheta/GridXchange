@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { X, Zap, Sun, Home, Shield, ArrowRight, Mail, Lock, User as UserIcon, CheckCircle2 } from 'lucide-react';
+import { X, Zap, Sun, Home, Shield, ArrowRight, Mail, Lock, User as UserIcon, CheckCircle2, MapPin } from 'lucide-react';
+import { LocationPickerModal, LocationSelectionResult } from '../components/LocationPickerModal';
+import { DEFAULT_MAP_CENTER } from '../utils/geoUtils';
 
 interface Props {
   isOpen: boolean;
@@ -27,6 +29,15 @@ export const AuthModal: React.FC<Props> = ({
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [solarCapacity, setSolarCapacity] = useState('6.5');
+  const [selectedLocation, setSelectedLocation] = useState<LocationSelectionResult>({
+    city: 'Ahmedabad',
+    locality: 'Vastrapur',
+    latitude: DEFAULT_MAP_CENTER.lat,
+    longitude: DEFAULT_MAP_CENTER.lng,
+    location: 'Vastrapur, Ahmedabad',
+    grid_zone: 'Zone A',
+  });
+  const [isLocationModalOpen, setIsLocationModalOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -68,7 +79,12 @@ export const AuthModal: React.FC<Props> = ({
           password,
           role: chosenRole,
           solar_capacity: chosenRole === 'prosumer' ? Number(solarCapacity) : undefined,
-          location: 'Zone A',
+          location: selectedLocation.location,
+          city: selectedLocation.city,
+          locality: selectedLocation.locality,
+          latitude: Number(selectedLocation.latitude),
+          longitude: Number(selectedLocation.longitude),
+          grid_zone: selectedLocation.grid_zone,
         });
         onSelectRole?.(chosenRole);
       } else {
@@ -337,6 +353,35 @@ export const AuthModal: React.FC<Props> = ({
               </div>
             </div>
 
+            {/* Location Selection with Leaflet Interactive Map */}
+            <div>
+              <label className="block text-xs font-mono uppercase tracking-wider text-[#8D9188] mb-1.5 font-semibold">
+                Location
+              </label>
+              <div className="flex items-center justify-between p-3.5 rounded-2xl border border-[#E6E2D8] dark:border-[#2C2D29] bg-[#FAF8F5] dark:bg-[#111210]">
+                <div className="flex items-center gap-2.5 overflow-hidden">
+                  <div className="w-8 h-8 rounded-xl bg-[#FEF3C7] dark:bg-[#2A2312] text-[#B45309] dark:text-[#E5A93C] flex items-center justify-center shrink-0">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div className="truncate">
+                    <div className="text-xs font-bold text-[#1A1B19] dark:text-[#EDEDE8] truncate">
+                      {selectedLocation.location}
+                    </div>
+                    <div className="text-[10px] text-[#686B63] dark:text-[#8D9188]">
+                      Interactive Map Coordinates Verified
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsLocationModalOpen(true)}
+                  className="px-3 py-1.5 rounded-xl border border-[#E6E2D8] dark:border-[#2C2D29] bg-[#FFFFFF] dark:bg-[#1C1D1A] hover:border-[#B45309] dark:hover:border-[#E5A93C] text-[11px] font-bold text-[#1A1B19] dark:text-[#EDEDE8] transition-colors shrink-0 cursor-pointer shadow-2xs"
+                >
+                  {selectedLocation.location ? 'Change' : 'Select Location'}
+                </button>
+              </div>
+            </div>
+
             {chosenRole === 'prosumer' && (
               <div>
                 <label className="block text-xs font-mono uppercase tracking-wider text-[#8D9188] mb-1.5 font-semibold">
@@ -382,6 +427,15 @@ export const AuthModal: React.FC<Props> = ({
           </form>
         )}
       </div>
+
+      {/* Location Picker Modal with Leaflet + OpenStreetMap */}
+      <LocationPickerModal
+        isOpen={isLocationModalOpen}
+        onClose={() => setIsLocationModalOpen(false)}
+        onConfirm={(res) => setSelectedLocation(res)}
+        initialCoords={{ latitude: selectedLocation.latitude, longitude: selectedLocation.longitude }}
+        initialLocationName={selectedLocation.location}
+      />
     </div>
   );
 };

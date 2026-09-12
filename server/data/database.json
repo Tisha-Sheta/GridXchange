@@ -9,7 +9,12 @@
       "role": "admin",
       "status": "active",
       "created_at": "2026-08-13T07:05:55.604Z",
-      "password_hash": "$2b$10$bywyKNA5Jp4ov683Yn8MDun6txyk6t57F8kc7TCiYYT4y6WVaOE7W"
+      "password_hash": "$2b$10$bywyKNA5Jp4ov683Yn8MDun6txyk6t57F8kc7TCiYYT4y6WVaOE7W",
+      "latitude": 23.03,
+      "longitude": 72.55,
+      "city": "Ahmedabad",
+      "locality": "Sector 4",
+      "grid_zone": "Zone A"
     },
     {
       "id": "usr_c001",
@@ -20,7 +25,12 @@
       "role": "consumer",
       "status": "active",
       "created_at": "2026-08-28T07:05:55.723Z",
-      "password_hash": "$2b$10$7hvs9vHcZZxOF/E7vADVGe1dTC.kQCBkeFhT.gAXmz5wj98Bt1BK6"
+      "password_hash": "$2b$10$7hvs9vHcZZxOF/E7vADVGe1dTC.kQCBkeFhT.gAXmz5wj98Bt1BK6",
+      "latitude": 23.035,
+      "longitude": 72.5293,
+      "city": "Ahmedabad",
+      "locality": "Vastrapur",
+      "grid_zone": "Zone A"
     },
     {
       "id": "usr_p001",
@@ -31,7 +41,12 @@
       "role": "prosumer",
       "status": "active",
       "created_at": "2026-08-23T07:05:55.830Z",
-      "password_hash": "$2b$10$htTeDJh632ptnjyiKiDkFehTe/hewlYBC5tsgARMgHnolRbhJHJrW"
+      "password_hash": "$2b$10$htTeDJh632ptnjyiKiDkFehTe/hewlYBC5tsgARMgHnolRbhJHJrW",
+      "latitude": 23.0384,
+      "longitude": 72.5122,
+      "city": "Ahmedabad",
+      "locality": "Bodakdev",
+      "grid_zone": "Zone A"
     },
     {
       "id": "usr_p002",
@@ -42,7 +57,12 @@
       "role": "prosumer",
       "status": "active",
       "created_at": "2026-08-25T07:05:55.927Z",
-      "password_hash": "$2b$10$8heP3xHV7VELwlkJmmogZ.yyxJAssf3FGMOtwI/OuVW/l0iBczGru"
+      "password_hash": "$2b$10$8heP3xHV7VELwlkJmmogZ.yyxJAssf3FGMOtwI/OuVW/l0iBczGru",
+      "latitude": 23.0373,
+      "longitude": 72.5613,
+      "city": "Ahmedabad",
+      "locality": "Navrangpura",
+      "grid_zone": "Zone B"
     },
     {
       "id": "usr_p003",
@@ -53,7 +73,12 @@
       "role": "prosumer",
       "status": "active",
       "created_at": "2026-08-29T07:05:56.017Z",
-      "password_hash": "$2b$10$nYM0nuJ2BVPbSNkAnWXho.QDC7sCEi8SXjUPn9OcGI58PLD.Aouhm"
+      "password_hash": "$2b$10$nYM0nuJ2BVPbSNkAnWXho.QDC7sCEi8SXjUPn9OcGI58PLD.Aouhm",
+      "latitude": 22.92,
+      "longitude": 72.435,
+      "city": "Ahmedabad",
+      "locality": "Changodar",
+      "grid_zone": "Zone C"
     },
     {
       "name": "tisha",
@@ -64,7 +89,12 @@
       "status": "active",
       "password_hash": "$2b$10$Q3cGSTsaqSFGpwyUUmgDKevaxOqW0iHv39AG7ZpATuIjoDcJ01lgy",
       "id": "usr_1789197037374_050xp",
-      "created_at": "2026-09-12T07:10:37.374Z"
+      "created_at": "2026-09-12T07:10:37.374Z",
+      "latitude": 23.035,
+      "longitude": 72.5293,
+      "city": "Ahmedabad",
+      "locality": "Vastrapur",
+      "grid_zone": "Zone A"
     },
     {
       "name": "janvi",
@@ -75,7 +105,12 @@
       "status": "active",
       "password_hash": "$2b$10$oh1RHBqkzQEJ1hD.n.zdteDsDj34gARQ8intqDd.zpcmdNt521f7W",
       "id": "usr_1789198981104_qfzdi",
-      "created_at": "2026-09-12T07:43:01.104Z"
+      "created_at": "2026-09-12T07:43:01.104Z",
+      "latitude": 23.035,
+      "longitude": 72.5293,
+      "city": "Ahmedabad",
+      "locality": "Vastrapur",
+      "grid_zone": "Zone A"
     },
     {
       "name": "Arjun Verma (Test Prosumer)",
@@ -86,7 +121,12 @@
       "status": "active",
       "password_hash": "$2b$10$hZEg7b4FnddZ0C6LxpLWr.wcwarIGHZHImsZnOIJNyUJWtXNPRyBG",
       "id": "usr_1789227662686_uahtq",
-      "created_at": "2026-09-12T15:41:02.686Z"
+      "created_at": "2026-09-12T15:41:02.686Z",
+      "latitude": 23.035,
+      "longitude": 72.5293,
+      "city": "Ahmedabad",
+      "locality": "Vastrapur",
+      "grid_zone": "Zone A"
     },
     {
       "name": "Rahul",
@@ -97,7 +137,12 @@
       "status": "active",
       "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
       "id": "usr_1789227821975_xfh3y",
-      "created_at": "2026-09-12T15:43:41.975Z"
+      "created_at": "2026-09-12T15:43:41.975Z",
+      "latitude": 23.035,
+      "longitude": 72.5293,
+      "city": "Ahmedabad",
+      "locality": "Vastrapur",
+      "grid_zone": "Zone A"
     },
     {
       "name": "Aastha",
@@ -108,7 +153,90 @@
       "status": "active",
       "password_hash": "$2b$10$We1uNjanKcTojw.iwHR3/eAd/ED0CliVF9ORmeyg0/rm6LnQg5w.e",
       "id": "usr_1789229852115_c86ca",
-      "created_at": "2026-09-12T16:17:32.115Z"
+      "created_at": "2026-09-12T16:17:32.115Z",
+      "latitude": 23.035,
+      "longitude": 72.5293,
+      "city": "Ahmedabad",
+      "locality": "Vastrapur",
+      "grid_zone": "Zone A"
+    },
+    {
+      "name": "Dr. Vikram Sarabhai Solar (P101)",
+      "email": "p101_1789236583014@gridxchange.io",
+      "phone": "+91 99887 76655",
+      "location": "Sarabhai Estate, Vastrapur, Ahmedabad",
+      "city": "Ahmedabad",
+      "locality": "Vastrapur",
+      "latitude": 23.036,
+      "longitude": 72.528,
+      "grid_zone": "Zone A",
+      "role": "prosumer",
+      "status": "active",
+      "password_hash": "$2b$10$K8P.kQJP5.DCUSlAMc1wQewQYq/bMpLWQy9E5C5cm7cqTo/03SCK6",
+      "id": "usr_1789236590567_0wjff",
+      "created_at": "2026-09-12T18:09:50.568Z"
+    },
+    {
+      "name": "Kavita Iyer (C101)",
+      "email": "c101_1789236591033@gridxchange.io",
+      "phone": "+91 91234 56789",
+      "location": "Palm Meadows, Bodakdev, Ahmedabad",
+      "city": "Ahmedabad",
+      "locality": "Bodakdev",
+      "latitude": 23.039,
+      "longitude": 72.513,
+      "grid_zone": "Zone A",
+      "role": "consumer",
+      "status": "active",
+      "password_hash": "$2b$10$dNhTNU5i8W0mNuOPGk6VieQUC306.6Y5U/kvCf2QrpV8JU1nBkWLm",
+      "id": "usr_1789236591155_i3fg4",
+      "created_at": "2026-09-12T18:09:51.155Z"
+    },
+    {
+      "name": "Aarav Patel (Rooftop Solar)",
+      "email": "aarav_1789236657668@gridxchange.io",
+      "phone": "+91 99887 76655",
+      "location": "Aarav Villa, Zone A",
+      "city": "Zone A",
+      "locality": "Aarav Villa",
+      "grid_zone": "Zone A",
+      "role": "prosumer",
+      "status": "active",
+      "password_hash": "$2b$10$SqyQM2QKwv8urFv.zOwCieF66oQuy7SS8liOi1EzDUA.mt8gHQBMe",
+      "id": "usr_1789236657775_uvxtt",
+      "created_at": "2026-09-12T18:10:57.775Z"
+    },
+    {
+      "name": "anjali",
+      "email": "anjali@gmail.com",
+      "phone": "",
+      "location": "Sector 22, Gandhinagar",
+      "city": "Gandhinagar",
+      "locality": "Sector 22",
+      "latitude": 23.23576,
+      "longitude": 72.657335,
+      "grid_zone": "Zone C",
+      "role": "consumer",
+      "status": "active",
+      "password_hash": "$2b$10$hYeqMYOz5FCTTxqDEXRleebH7023xKIEx4yvwadKDr4ZgbMTkln.a",
+      "id": "usr_1789238467631_ot415",
+      "created_at": "2026-09-12T18:41:07.631Z"
+    },
+    {
+      "name": "tina",
+      "email": "tina@gmail.com",
+      "phone": "",
+      "location": "Reliance Circle, Gandhinagar",
+      "city": "Gandhinagar",
+      "locality": "Reliance Circle",
+      "latitude": 23.188408,
+      "longitude": 72.627969,
+      "grid_zone": "Zone C",
+      "role": "prosumer",
+      "status": "active",
+      "password_hash": "$2b$10$Z8CmECRX1J7.FbWnRAw7MeVD60WOgTQKJ.CsLV6rUbF7Y.2Wp5Mq2",
+      "id": "usr_1789238633630_tnsem",
+      "created_at": "2026-09-12T18:43:53.630Z"
     }
   ],
   "prosumers": [
@@ -117,16 +245,16 @@
       "user_id": "usr_p001",
       "solar_capacity": 10,
       "reliability_score": 92,
-      "total_energy_sold": 289,
-      "total_earnings": 2167.5
+      "total_energy_sold": 294,
+      "total_earnings": 2205
     },
     {
       "id": "p_002",
       "user_id": "usr_p002",
       "solar_capacity": 6,
       "reliability_score": 88,
-      "total_energy_sold": 198,
-      "total_earnings": 1484.1
+      "total_energy_sold": 203,
+      "total_earnings": 1520.1
     },
     {
       "id": "p_003",
@@ -159,14 +287,38 @@
       "total_energy_sold": 0,
       "total_earnings": 0,
       "id": "p_1789227821977"
+    },
+    {
+      "user_id": "usr_1789236590567_0wjff",
+      "solar_capacity": 12,
+      "reliability_score": 90,
+      "total_energy_sold": 5,
+      "total_earnings": 34,
+      "id": "p_1789236590571"
+    },
+    {
+      "user_id": "usr_1789236657775_uvxtt",
+      "solar_capacity": 8.5,
+      "reliability_score": 90,
+      "total_energy_sold": 5,
+      "total_earnings": 34.5,
+      "id": "p_1789236657778"
+    },
+    {
+      "user_id": "usr_1789238633630_tnsem",
+      "solar_capacity": 7,
+      "reliability_score": 90,
+      "total_energy_sold": 0,
+      "total_earnings": 0,
+      "id": "p_1789238633638"
     }
   ],
   "consumers": [
     {
       "id": "c_001",
       "user_id": "usr_c001",
-      "total_energy_purchased": 152.5,
-      "total_savings": 454
+      "total_energy_purchased": 167.5,
+      "total_savings": 496
     },
     {
       "user_id": "usr_1789198981104_qfzdi",
@@ -179,6 +331,18 @@
       "total_energy_purchased": 5,
       "total_savings": 12.5,
       "id": "c_1789229852118"
+    },
+    {
+      "user_id": "usr_1789236591155_i3fg4",
+      "total_energy_purchased": 5,
+      "total_savings": 16,
+      "id": "c_1789236591157"
+    },
+    {
+      "user_id": "usr_1789238467631_ot415",
+      "total_energy_purchased": 0,
+      "total_savings": 0,
+      "id": "c_1789238467639"
     }
   ],
   "grid_zones": [
@@ -237,6 +401,24 @@
       "meter_number": "M006",
       "grid_zone_id": "zone_a",
       "id": "meter_1789227821979_xi3w"
+    },
+    {
+      "user_id": "usr_1789236590567_0wjff",
+      "meter_number": "M007",
+      "grid_zone_id": "zone_a",
+      "id": "meter_1789236590574_35fp"
+    },
+    {
+      "user_id": "usr_1789236657775_uvxtt",
+      "meter_number": "M008",
+      "grid_zone_id": "zone_a",
+      "id": "meter_1789236657781_eoog"
+    },
+    {
+      "user_id": "usr_1789238633630_tnsem",
+      "meter_number": "M009",
+      "grid_zone_id": "zone_c",
+      "id": "meter_1789238633642_8mum"
     }
   ],
   "meter_readings": [
@@ -575,6 +757,246 @@
       "generation": 2.1,
       "consumption": 2.1,
       "surplus": 0
+    },
+    {
+      "id": "mr_meter_1789236590574_35fp_8",
+      "meter_id": "meter_1789236590574_35fp",
+      "timestamp": "2026-09-12T08:00:00.000Z",
+      "generation": 3,
+      "consumption": 3.9,
+      "surplus": -0.9
+    },
+    {
+      "id": "mr_meter_1789236590574_35fp_9",
+      "meter_id": "meter_1789236590574_35fp",
+      "timestamp": "2026-09-12T09:00:00.000Z",
+      "generation": 5.4,
+      "consumption": 3.9,
+      "surplus": 1.5
+    },
+    {
+      "id": "mr_meter_1789236590574_35fp_10",
+      "meter_id": "meter_1789236590574_35fp",
+      "timestamp": "2026-09-12T10:00:00.000Z",
+      "generation": 8.4,
+      "consumption": 3.6,
+      "surplus": 4.8
+    },
+    {
+      "id": "mr_meter_1789236590574_35fp_11",
+      "meter_id": "meter_1789236590574_35fp",
+      "timestamp": "2026-09-12T11:00:00.000Z",
+      "generation": 10.2,
+      "consumption": 3.6,
+      "surplus": 6.6
+    },
+    {
+      "id": "mr_meter_1789236590574_35fp_12",
+      "meter_id": "meter_1789236590574_35fp",
+      "timestamp": "2026-09-12T12:00:00.000Z",
+      "generation": 11.4,
+      "consumption": 3.4,
+      "surplus": 8
+    },
+    {
+      "id": "mr_meter_1789236590574_35fp_13",
+      "meter_id": "meter_1789236590574_35fp",
+      "timestamp": "2026-09-12T13:00:00.000Z",
+      "generation": 11.8,
+      "consumption": 3.9,
+      "surplus": 7.9
+    },
+    {
+      "id": "mr_meter_1789236590574_35fp_14",
+      "meter_id": "meter_1789236590574_35fp",
+      "timestamp": "2026-09-12T14:00:00.000Z",
+      "generation": 10.8,
+      "consumption": 3.9,
+      "surplus": 6.9
+    },
+    {
+      "id": "mr_meter_1789236590574_35fp_15",
+      "meter_id": "meter_1789236590574_35fp",
+      "timestamp": "2026-09-12T15:00:00.000Z",
+      "generation": 9.4,
+      "consumption": 3.6,
+      "surplus": 5.8
+    },
+    {
+      "id": "mr_meter_1789236590574_35fp_16",
+      "meter_id": "meter_1789236590574_35fp",
+      "timestamp": "2026-09-12T16:00:00.000Z",
+      "generation": 6.6,
+      "consumption": 3.4,
+      "surplus": 3.2
+    },
+    {
+      "id": "mr_meter_1789236590574_35fp_17",
+      "meter_id": "meter_1789236590574_35fp",
+      "timestamp": "2026-09-12T17:00:00.000Z",
+      "generation": 3.6,
+      "consumption": 3.6,
+      "surplus": 0
+    },
+    {
+      "id": "mr_meter_1789236657781_eoog_8",
+      "meter_id": "meter_1789236657781_eoog",
+      "timestamp": "2026-09-12T08:00:00.000Z",
+      "generation": 2.1,
+      "consumption": 2.8,
+      "surplus": -0.7
+    },
+    {
+      "id": "mr_meter_1789236657781_eoog_9",
+      "meter_id": "meter_1789236657781_eoog",
+      "timestamp": "2026-09-12T09:00:00.000Z",
+      "generation": 3.8,
+      "consumption": 2.8,
+      "surplus": 1
+    },
+    {
+      "id": "mr_meter_1789236657781_eoog_10",
+      "meter_id": "meter_1789236657781_eoog",
+      "timestamp": "2026-09-12T10:00:00.000Z",
+      "generation": 5.9,
+      "consumption": 2.5,
+      "surplus": 3.4
+    },
+    {
+      "id": "mr_meter_1789236657781_eoog_11",
+      "meter_id": "meter_1789236657781_eoog",
+      "timestamp": "2026-09-12T11:00:00.000Z",
+      "generation": 7.2,
+      "consumption": 2.5,
+      "surplus": 4.7
+    },
+    {
+      "id": "mr_meter_1789236657781_eoog_12",
+      "meter_id": "meter_1789236657781_eoog",
+      "timestamp": "2026-09-12T12:00:00.000Z",
+      "generation": 8.1,
+      "consumption": 2.3,
+      "surplus": 5.8
+    },
+    {
+      "id": "mr_meter_1789236657781_eoog_13",
+      "meter_id": "meter_1789236657781_eoog",
+      "timestamp": "2026-09-12T13:00:00.000Z",
+      "generation": 8.3,
+      "consumption": 2.8,
+      "surplus": 5.5
+    },
+    {
+      "id": "mr_meter_1789236657781_eoog_14",
+      "meter_id": "meter_1789236657781_eoog",
+      "timestamp": "2026-09-12T14:00:00.000Z",
+      "generation": 7.7,
+      "consumption": 2.8,
+      "surplus": 4.9
+    },
+    {
+      "id": "mr_meter_1789236657781_eoog_15",
+      "meter_id": "meter_1789236657781_eoog",
+      "timestamp": "2026-09-12T15:00:00.000Z",
+      "generation": 6.6,
+      "consumption": 2.5,
+      "surplus": 4.1
+    },
+    {
+      "id": "mr_meter_1789236657781_eoog_16",
+      "meter_id": "meter_1789236657781_eoog",
+      "timestamp": "2026-09-12T16:00:00.000Z",
+      "generation": 4.7,
+      "consumption": 2.3,
+      "surplus": 2.4
+    },
+    {
+      "id": "mr_meter_1789236657781_eoog_17",
+      "meter_id": "meter_1789236657781_eoog",
+      "timestamp": "2026-09-12T17:00:00.000Z",
+      "generation": 2.5,
+      "consumption": 2.5,
+      "surplus": 0
+    },
+    {
+      "id": "mr_meter_1789238633642_8mum_8",
+      "meter_id": "meter_1789238633642_8mum",
+      "timestamp": "2026-09-12T08:00:00.000Z",
+      "generation": 1.8,
+      "consumption": 2.4,
+      "surplus": -0.6
+    },
+    {
+      "id": "mr_meter_1789238633642_8mum_9",
+      "meter_id": "meter_1789238633642_8mum",
+      "timestamp": "2026-09-12T09:00:00.000Z",
+      "generation": 3.1,
+      "consumption": 2.4,
+      "surplus": 0.7
+    },
+    {
+      "id": "mr_meter_1789238633642_8mum_10",
+      "meter_id": "meter_1789238633642_8mum",
+      "timestamp": "2026-09-12T10:00:00.000Z",
+      "generation": 4.9,
+      "consumption": 2.1,
+      "surplus": 2.8
+    },
+    {
+      "id": "mr_meter_1789238633642_8mum_11",
+      "meter_id": "meter_1789238633642_8mum",
+      "timestamp": "2026-09-12T11:00:00.000Z",
+      "generation": 6,
+      "consumption": 2.1,
+      "surplus": 3.9
+    },
+    {
+      "id": "mr_meter_1789238633642_8mum_12",
+      "meter_id": "meter_1789238633642_8mum",
+      "timestamp": "2026-09-12T12:00:00.000Z",
+      "generation": 6.6,
+      "consumption": 1.9,
+      "surplus": 4.7
+    },
+    {
+      "id": "mr_meter_1789238633642_8mum_13",
+      "meter_id": "meter_1789238633642_8mum",
+      "timestamp": "2026-09-12T13:00:00.000Z",
+      "generation": 6.9,
+      "consumption": 2.4,
+      "surplus": 4.5
+    },
+    {
+      "id": "mr_meter_1789238633642_8mum_14",
+      "meter_id": "meter_1789238633642_8mum",
+      "timestamp": "2026-09-12T14:00:00.000Z",
+      "generation": 6.3,
+      "consumption": 2.4,
+      "surplus": 3.9
+    },
+    {
+      "id": "mr_meter_1789238633642_8mum_15",
+      "meter_id": "meter_1789238633642_8mum",
+      "timestamp": "2026-09-12T15:00:00.000Z",
+      "generation": 5.5,
+      "consumption": 2.1,
+      "surplus": 3.4
+    },
+    {
+      "id": "mr_meter_1789238633642_8mum_16",
+      "meter_id": "meter_1789238633642_8mum",
+      "timestamp": "2026-09-12T16:00:00.000Z",
+      "generation": 3.9,
+      "consumption": 1.9,
+      "surplus": 2
+    },
+    {
+      "id": "mr_meter_1789238633642_8mum_17",
+      "meter_id": "meter_1789238633642_8mum",
+      "timestamp": "2026-09-12T17:00:00.000Z",
+      "generation": 2.1,
+      "consumption": 2.1,
+      "surplus": 0
     }
   ],
   "energy_listings": [
@@ -599,7 +1021,7 @@
       "start_time": "14:00",
       "end_time": "15:00",
       "grid_zone_id": "zone_b",
-      "status": "Available",
+      "status": "Matched",
       "created_at": "2026-09-12T05:05:56.109Z"
     },
     {
@@ -682,9 +1104,57 @@
       "end_time": "15:00",
       "date": "2026-09-12",
       "grid_zone_id": "zone_a",
-      "status": "Available",
+      "status": "Matched",
       "id": "lst_1789228532993",
       "created_at": "2026-09-12T15:55:32.993Z"
+    },
+    {
+      "prosumer_id": "p_1789236590571",
+      "quantity": 7.5,
+      "price": 6.8,
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "date": "2026-09-12",
+      "grid_zone_id": "zone_a",
+      "status": "Matched",
+      "id": "lst_1789236590867",
+      "created_at": "2026-09-12T18:09:50.867Z"
+    },
+    {
+      "prosumer_id": "p_001",
+      "quantity": 6,
+      "price": 7.2,
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "date": "2026-09-12",
+      "grid_zone_id": "zone_a",
+      "status": "Available",
+      "id": "lst_1789236647200",
+      "created_at": "2026-09-12T18:10:47.200Z"
+    },
+    {
+      "prosumer_id": "p_1789236657778",
+      "quantity": 7.5,
+      "price": 6.9,
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "date": "2026-09-12",
+      "grid_zone_id": "zone_a",
+      "status": "Matched",
+      "id": "lst_1789236657798",
+      "created_at": "2026-09-12T18:10:57.798Z"
+    },
+    {
+      "prosumer_id": "p_1789238633638",
+      "quantity": 3.9,
+      "price": 5.5,
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "date": "2026-09-12",
+      "grid_zone_id": "zone_c",
+      "status": "Available",
+      "id": "lst_1789238656781",
+      "created_at": "2026-09-12T18:44:16.781Z"
     }
   ],
   "energy_requirements": [
@@ -867,6 +1337,78 @@
       "status": "Matched",
       "id": "req_1789230774622",
       "created_at": "2026-09-12T16:32:54.622Z"
+    },
+    {
+      "consumer_id": "c_1789236591157",
+      "quantity": 5,
+      "max_price": 8.5,
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "date": "2026-09-12",
+      "preferred_zone": "Zone A",
+      "status": "Matched",
+      "id": "req_1789236591276",
+      "created_at": "2026-09-12T18:09:51.276Z"
+    },
+    {
+      "consumer_id": "c_001",
+      "quantity": 5,
+      "max_price": 8,
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "date": "2026-09-12",
+      "preferred_zone": "Zone A",
+      "status": "Matched",
+      "id": "req_1789236619769",
+      "created_at": "2026-09-12T18:10:19.769Z"
+    },
+    {
+      "consumer_id": "c_001",
+      "quantity": 5,
+      "max_price": 8,
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "date": "2026-09-12",
+      "preferred_zone": "Zone A",
+      "status": "Matched",
+      "id": "req_1789236647085",
+      "created_at": "2026-09-12T18:10:47.085Z"
+    },
+    {
+      "consumer_id": "c_001",
+      "quantity": 5,
+      "max_price": 8,
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "date": "2026-09-12",
+      "preferred_zone": "Zone A",
+      "status": "Matched",
+      "id": "req_1789236657810",
+      "created_at": "2026-09-12T18:10:57.810Z"
+    },
+    {
+      "consumer_id": "c_1789238467639",
+      "quantity": 5,
+      "max_price": 8,
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "date": "2026-09-12",
+      "preferred_zone": "Zone C",
+      "status": "Open",
+      "id": "req_1789238502858",
+      "created_at": "2026-09-12T18:41:42.858Z"
+    },
+    {
+      "consumer_id": "c_1789238467639",
+      "quantity": 4,
+      "max_price": 7.5,
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "date": "2026-09-12",
+      "preferred_zone": "Zone C",
+      "status": "Open",
+      "id": "req_1789238751933",
+      "created_at": "2026-09-12T18:45:51.933Z"
     }
   ],
   "matches": [
@@ -4967,6 +5509,2674 @@
           "password_hash": "$2b$10$8heP3xHV7VELwlkJmmogZ.yyxJAssf3FGMOtwI/OuVW/l0iBczGru"
         }
       }
+    },
+    {
+      "id": "mtc_req_1789236591276_lst_1789236590867",
+      "requirement_id": "req_1789236591276",
+      "listing_id": "lst_1789236590867",
+      "match_score": 98,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "7 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "1.57 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹6.8/kWh within budget (max ₹8.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 6.8,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 6.8,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:09:51.286Z",
+      "listing": {
+        "prosumer_id": "p_1789236590571",
+        "quantity": 7.5,
+        "price": 6.8,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789236590867",
+        "created_at": "2026-09-12T18:09:50.867Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789236590567_0wjff",
+        "solar_capacity": 12,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789236590571",
+        "user": {
+          "name": "Dr. Vikram Sarabhai Solar (P101)",
+          "email": "p101_1789236583014@gridxchange.io",
+          "phone": "+91 99887 76655",
+          "location": "Sarabhai Estate, Vastrapur, Ahmedabad",
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "latitude": 23.036,
+          "longitude": 72.528,
+          "grid_zone": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$K8P.kQJP5.DCUSlAMc1wQewQYq/bMpLWQy9E5C5cm7cqTo/03SCK6",
+          "id": "usr_1789236590567_0wjff",
+          "created_at": "2026-09-12T18:09:50.568Z"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236591276_lst_1789228532993",
+      "requirement_id": "req_1789236591276",
+      "listing_id": "lst_1789228532993",
+      "match_score": 97,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.8 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "0.11 km away (Bodakdev)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.5/kWh within budget (max ₹8.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "92% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.5,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.5,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:09:51.286Z",
+      "listing": {
+        "prosumer_id": "p_001",
+        "quantity": 4.5,
+        "price": 7.5,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789228532993",
+        "created_at": "2026-09-12T15:55:32.993Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_001",
+        "user_id": "usr_p001",
+        "solar_capacity": 10,
+        "reliability_score": 92,
+        "total_energy_sold": 289,
+        "total_earnings": 2167.5,
+        "user": {
+          "id": "usr_p001",
+          "name": "SunPower Apex (P001)",
+          "email": "p001@gridxchange.io",
+          "phone": "+91 97110 34567",
+          "location": "Apex Villa Rooftop Solar, Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-23T07:05:55.830Z",
+          "password_hash": "$2b$10$htTeDJh632ptnjyiKiDkFehTe/hewlYBC5tsgARMgHnolRbhJHJrW",
+          "latitude": 23.0384,
+          "longitude": 72.5122,
+          "city": "Ahmedabad",
+          "locality": "Bodakdev",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236591276_lst_1789228237968",
+      "requirement_id": "req_1789236591276",
+      "listing_id": "lst_1789228237968",
+      "match_score": 92,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "1.73 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹5.8/kWh within budget (max ₹8.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 5.8,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 5.8,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:09:51.286Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 3.7,
+        "price": 5.8,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789228237968",
+        "created_at": "2026-09-12T15:50:37.968Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236591276_lst_1789227975976",
+      "requirement_id": "req_1789236591276",
+      "listing_id": "lst_1789227975976",
+      "match_score": 91,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "1.73 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.2/kWh within budget (max ₹8.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.2,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.2,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:09:51.286Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 4,
+        "price": 7.2,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789227975976",
+        "created_at": "2026-09-12T15:46:15.976Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236591276_lst_003",
+      "requirement_id": "req_1789236591276",
+      "listing_id": "lst_003",
+      "match_score": 85,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "15.45 km away (Changodar)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": false,
+          "detail": "₹8.7/kWh within budget (max ₹8.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "85% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": false,
+          "detail": "Zone C (High congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 6,
+        "demand_factor": 1,
+        "supply_factor": 0.5,
+        "congestion_factor": 1.2,
+        "final_price": 8.7,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:09:51.286Z",
+      "listing": {
+        "id": "lst_003",
+        "prosumer_id": "p_003",
+        "quantity": 5.1,
+        "price": 8.5,
+        "date": "2026-09-12",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "grid_zone_id": "zone_c",
+        "status": "Available",
+        "created_at": "2026-09-12T06:05:56.109Z",
+        "grid_zone": {
+          "id": "zone_c",
+          "zone_name": "C",
+          "congestion_level": "High",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_003",
+        "user_id": "usr_p003",
+        "solar_capacity": 8,
+        "reliability_score": 85,
+        "total_energy_sold": 210,
+        "total_earnings": 1680,
+        "user": {
+          "id": "usr_p003",
+          "name": "HelioGrid Gamma (P003)",
+          "email": "p003@gridxchange.io",
+          "phone": "+91 99220 56789",
+          "location": "Gamma Industrial Cluster, Zone C",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-29T07:05:56.017Z",
+          "password_hash": "$2b$10$nYM0nuJ2BVPbSNkAnWXho.QDC7sCEi8SXjUPn9OcGI58PLD.Aouhm",
+          "latitude": 22.92,
+          "longitude": 72.435,
+          "city": "Ahmedabad",
+          "locality": "Changodar",
+          "grid_zone": "Zone C"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236591276_lst_002",
+      "requirement_id": "req_1789236591276",
+      "listing_id": "lst_002",
+      "match_score": 82,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "3.2 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "4.95 km away (Navrangpura)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹8/kWh within budget (max ₹8.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "88% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": false,
+          "detail": "Zone B (Medium congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 6,
+        "demand_factor": 1,
+        "supply_factor": 0.5,
+        "congestion_factor": 0.5,
+        "final_price": 8,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:09:51.286Z",
+      "listing": {
+        "id": "lst_002",
+        "prosumer_id": "p_002",
+        "quantity": 3.2,
+        "price": 7.2,
+        "date": "2026-09-12",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "grid_zone_id": "zone_b",
+        "status": "Available",
+        "created_at": "2026-09-12T05:05:56.109Z",
+        "grid_zone": {
+          "id": "zone_b",
+          "zone_name": "B",
+          "congestion_level": "Medium",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_002",
+        "user_id": "usr_p002",
+        "solar_capacity": 6,
+        "reliability_score": 88,
+        "total_energy_sold": 198,
+        "total_earnings": 1484.1,
+        "user": {
+          "id": "usr_p002",
+          "name": "SolarReserve Beta (P002)",
+          "email": "p002@gridxchange.io",
+          "phone": "+91 98110 45678",
+          "location": "Beta Heights Microgrid, Zone B",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-25T07:05:55.927Z",
+          "password_hash": "$2b$10$8heP3xHV7VELwlkJmmogZ.yyxJAssf3FGMOtwI/OuVW/l0iBczGru",
+          "latitude": 23.0373,
+          "longitude": 72.5613,
+          "city": "Ahmedabad",
+          "locality": "Navrangpura",
+          "grid_zone": "Zone B"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236619769_lst_1789228532993",
+      "requirement_id": "req_1789236619769",
+      "listing_id": "lst_1789228532993",
+      "match_score": 96,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.8 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "1.79 km away (Bodakdev)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.5/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "92% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.5,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.5,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:19.777Z",
+      "listing": {
+        "prosumer_id": "p_001",
+        "quantity": 4.5,
+        "price": 7.5,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789228532993",
+        "created_at": "2026-09-12T15:55:32.993Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_001",
+        "user_id": "usr_p001",
+        "solar_capacity": 10,
+        "reliability_score": 92,
+        "total_energy_sold": 289,
+        "total_earnings": 2167.5,
+        "user": {
+          "id": "usr_p001",
+          "name": "SunPower Apex (P001)",
+          "email": "p001@gridxchange.io",
+          "phone": "+91 97110 34567",
+          "location": "Apex Villa Rooftop Solar, Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-23T07:05:55.830Z",
+          "password_hash": "$2b$10$htTeDJh632ptnjyiKiDkFehTe/hewlYBC5tsgARMgHnolRbhJHJrW",
+          "latitude": 23.0384,
+          "longitude": 72.5122,
+          "city": "Ahmedabad",
+          "locality": "Bodakdev",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236619769_lst_1789228237968",
+      "requirement_id": "req_1789236619769",
+      "listing_id": "lst_1789228237968",
+      "match_score": 92,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "0 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹5.8/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 5.8,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 5.8,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:19.777Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 3.7,
+        "price": 5.8,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789228237968",
+        "created_at": "2026-09-12T15:50:37.968Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236619769_lst_1789227975976",
+      "requirement_id": "req_1789236619769",
+      "listing_id": "lst_1789227975976",
+      "match_score": 90,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "0 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.2/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.2,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.2,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:19.777Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 4,
+        "price": 7.2,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789227975976",
+        "created_at": "2026-09-12T15:46:15.976Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236619769_lst_003",
+      "requirement_id": "req_1789236619769",
+      "listing_id": "lst_003",
+      "match_score": 83,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "16.02 km away (Changodar)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": false,
+          "detail": "₹8.7/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "85% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": false,
+          "detail": "Zone C (High congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 6,
+        "demand_factor": 1,
+        "supply_factor": 0.5,
+        "congestion_factor": 1.2,
+        "final_price": 8.7,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:19.776Z",
+      "listing": {
+        "id": "lst_003",
+        "prosumer_id": "p_003",
+        "quantity": 5.1,
+        "price": 8.5,
+        "date": "2026-09-12",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "grid_zone_id": "zone_c",
+        "status": "Available",
+        "created_at": "2026-09-12T06:05:56.109Z",
+        "grid_zone": {
+          "id": "zone_c",
+          "zone_name": "C",
+          "congestion_level": "High",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_003",
+        "user_id": "usr_p003",
+        "solar_capacity": 8,
+        "reliability_score": 85,
+        "total_energy_sold": 210,
+        "total_earnings": 1680,
+        "user": {
+          "id": "usr_p003",
+          "name": "HelioGrid Gamma (P003)",
+          "email": "p003@gridxchange.io",
+          "phone": "+91 99220 56789",
+          "location": "Gamma Industrial Cluster, Zone C",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-29T07:05:56.017Z",
+          "password_hash": "$2b$10$nYM0nuJ2BVPbSNkAnWXho.QDC7sCEi8SXjUPn9OcGI58PLD.Aouhm",
+          "latitude": 22.92,
+          "longitude": 72.435,
+          "city": "Ahmedabad",
+          "locality": "Changodar",
+          "grid_zone": "Zone C"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236619769_lst_002",
+      "requirement_id": "req_1789236619769",
+      "listing_id": "lst_002",
+      "match_score": 81,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "3.2 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "3.28 km away (Navrangpura)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹8/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "88% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": false,
+          "detail": "Zone B (Medium congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 6,
+        "demand_factor": 1,
+        "supply_factor": 0.5,
+        "congestion_factor": 0.5,
+        "final_price": 8,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:19.776Z",
+      "listing": {
+        "id": "lst_002",
+        "prosumer_id": "p_002",
+        "quantity": 3.2,
+        "price": 7.2,
+        "date": "2026-09-12",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "grid_zone_id": "zone_b",
+        "status": "Available",
+        "created_at": "2026-09-12T05:05:56.109Z",
+        "grid_zone": {
+          "id": "zone_b",
+          "zone_name": "B",
+          "congestion_level": "Medium",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_002",
+        "user_id": "usr_p002",
+        "solar_capacity": 6,
+        "reliability_score": 88,
+        "total_energy_sold": 198,
+        "total_earnings": 1484.1,
+        "user": {
+          "id": "usr_p002",
+          "name": "SolarReserve Beta (P002)",
+          "email": "p002@gridxchange.io",
+          "phone": "+91 98110 45678",
+          "location": "Beta Heights Microgrid, Zone B",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-25T07:05:55.927Z",
+          "password_hash": "$2b$10$8heP3xHV7VELwlkJmmogZ.yyxJAssf3FGMOtwI/OuVW/l0iBczGru",
+          "latitude": 23.0373,
+          "longitude": 72.5613,
+          "city": "Ahmedabad",
+          "locality": "Navrangpura",
+          "grid_zone": "Zone B"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236647085_lst_1789228532993",
+      "requirement_id": "req_1789236647085",
+      "listing_id": "lst_1789228532993",
+      "match_score": 96,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.8 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "1.79 km away (Bodakdev)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.5/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "92% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.5,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.5,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:47.090Z",
+      "listing": {
+        "prosumer_id": "p_001",
+        "quantity": 4.5,
+        "price": 7.5,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789228532993",
+        "created_at": "2026-09-12T15:55:32.993Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_001",
+        "user_id": "usr_p001",
+        "solar_capacity": 10,
+        "reliability_score": 92,
+        "total_energy_sold": 289,
+        "total_earnings": 2167.5,
+        "user": {
+          "id": "usr_p001",
+          "name": "SunPower Apex (P001)",
+          "email": "p001@gridxchange.io",
+          "phone": "+91 97110 34567",
+          "location": "Apex Villa Rooftop Solar, Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-23T07:05:55.830Z",
+          "password_hash": "$2b$10$htTeDJh632ptnjyiKiDkFehTe/hewlYBC5tsgARMgHnolRbhJHJrW",
+          "latitude": 23.0384,
+          "longitude": 72.5122,
+          "city": "Ahmedabad",
+          "locality": "Bodakdev",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236647085_lst_1789228237968",
+      "requirement_id": "req_1789236647085",
+      "listing_id": "lst_1789228237968",
+      "match_score": 92,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "0 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹5.8/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 5.8,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 5.8,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:47.090Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 3.7,
+        "price": 5.8,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789228237968",
+        "created_at": "2026-09-12T15:50:37.968Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236647085_lst_1789227975976",
+      "requirement_id": "req_1789236647085",
+      "listing_id": "lst_1789227975976",
+      "match_score": 90,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "0 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.2/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.2,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.2,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:47.090Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 4,
+        "price": 7.2,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789227975976",
+        "created_at": "2026-09-12T15:46:15.976Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236647085_lst_003",
+      "requirement_id": "req_1789236647085",
+      "listing_id": "lst_003",
+      "match_score": 83,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "16.02 km away (Changodar)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": false,
+          "detail": "₹8.7/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "85% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": false,
+          "detail": "Zone C (High congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 6,
+        "demand_factor": 1,
+        "supply_factor": 0.5,
+        "congestion_factor": 1.2,
+        "final_price": 8.7,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:47.090Z",
+      "listing": {
+        "id": "lst_003",
+        "prosumer_id": "p_003",
+        "quantity": 5.1,
+        "price": 8.5,
+        "date": "2026-09-12",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "grid_zone_id": "zone_c",
+        "status": "Available",
+        "created_at": "2026-09-12T06:05:56.109Z",
+        "grid_zone": {
+          "id": "zone_c",
+          "zone_name": "C",
+          "congestion_level": "High",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_003",
+        "user_id": "usr_p003",
+        "solar_capacity": 8,
+        "reliability_score": 85,
+        "total_energy_sold": 210,
+        "total_earnings": 1680,
+        "user": {
+          "id": "usr_p003",
+          "name": "HelioGrid Gamma (P003)",
+          "email": "p003@gridxchange.io",
+          "phone": "+91 99220 56789",
+          "location": "Gamma Industrial Cluster, Zone C",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-29T07:05:56.017Z",
+          "password_hash": "$2b$10$nYM0nuJ2BVPbSNkAnWXho.QDC7sCEi8SXjUPn9OcGI58PLD.Aouhm",
+          "latitude": 22.92,
+          "longitude": 72.435,
+          "city": "Ahmedabad",
+          "locality": "Changodar",
+          "grid_zone": "Zone C"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236657810_lst_1789236647200",
+      "requirement_id": "req_1789236657810",
+      "listing_id": "lst_1789236647200",
+      "match_score": 97,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.8 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "1.79 km away (Bodakdev)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.2/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "92% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.2,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.2,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:57.813Z",
+      "listing": {
+        "prosumer_id": "p_001",
+        "quantity": 6,
+        "price": 7.2,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789236647200",
+        "created_at": "2026-09-12T18:10:47.200Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_001",
+        "user_id": "usr_p001",
+        "solar_capacity": 10,
+        "reliability_score": 92,
+        "total_energy_sold": 294,
+        "total_earnings": 2205,
+        "user": {
+          "id": "usr_p001",
+          "name": "SunPower Apex (P001)",
+          "email": "p001@gridxchange.io",
+          "phone": "+91 97110 34567",
+          "location": "Apex Villa Rooftop Solar, Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-23T07:05:55.830Z",
+          "password_hash": "$2b$10$htTeDJh632ptnjyiKiDkFehTe/hewlYBC5tsgARMgHnolRbhJHJrW",
+          "latitude": 23.0384,
+          "longitude": 72.5122,
+          "city": "Ahmedabad",
+          "locality": "Bodakdev",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236657810_lst_1789236657798",
+      "requirement_id": "req_1789236657810",
+      "listing_id": "lst_1789236657798",
+      "match_score": 97,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "Aarav Villa, Zone A"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹6.9/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 6.9,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 6.9,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:57.813Z",
+      "listing": {
+        "prosumer_id": "p_1789236657778",
+        "quantity": 7.5,
+        "price": 6.9,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789236657798",
+        "created_at": "2026-09-12T18:10:57.798Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789236657775_uvxtt",
+        "solar_capacity": 8.5,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789236657778",
+        "user": {
+          "name": "Aarav Patel (Rooftop Solar)",
+          "email": "aarav_1789236657668@gridxchange.io",
+          "phone": "+91 99887 76655",
+          "location": "Aarav Villa, Zone A",
+          "city": "Zone A",
+          "locality": "Aarav Villa",
+          "grid_zone": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$SqyQM2QKwv8urFv.zOwCieF66oQuy7SS8liOi1EzDUA.mt8gHQBMe",
+          "id": "usr_1789236657775_uvxtt",
+          "created_at": "2026-09-12T18:10:57.775Z"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236657810_lst_1789228237968",
+      "requirement_id": "req_1789236657810",
+      "listing_id": "lst_1789228237968",
+      "match_score": 92,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "0 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹5.8/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 5.8,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 5.8,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:57.813Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 3.7,
+        "price": 5.8,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789228237968",
+        "created_at": "2026-09-12T15:50:37.968Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236657810_lst_1789227975976",
+      "requirement_id": "req_1789236657810",
+      "listing_id": "lst_1789227975976",
+      "match_score": 90,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "0 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.2/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.2,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.2,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:57.813Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 4,
+        "price": 7.2,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789227975976",
+        "created_at": "2026-09-12T15:46:15.976Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789236657810_lst_003",
+      "requirement_id": "req_1789236657810",
+      "listing_id": "lst_003",
+      "match_score": 83,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "16.02 km away (Changodar)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": false,
+          "detail": "₹8.7/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "85% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": false,
+          "detail": "Zone C (High congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 6,
+        "demand_factor": 1,
+        "supply_factor": 0.5,
+        "congestion_factor": 1.2,
+        "final_price": 8.7,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:10:57.813Z",
+      "listing": {
+        "id": "lst_003",
+        "prosumer_id": "p_003",
+        "quantity": 5.1,
+        "price": 8.5,
+        "date": "2026-09-12",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "grid_zone_id": "zone_c",
+        "status": "Available",
+        "created_at": "2026-09-12T06:05:56.109Z",
+        "grid_zone": {
+          "id": "zone_c",
+          "zone_name": "C",
+          "congestion_level": "High",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_003",
+        "user_id": "usr_p003",
+        "solar_capacity": 8,
+        "reliability_score": 85,
+        "total_energy_sold": 210,
+        "total_earnings": 1680,
+        "user": {
+          "id": "usr_p003",
+          "name": "HelioGrid Gamma (P003)",
+          "email": "p003@gridxchange.io",
+          "phone": "+91 99220 56789",
+          "location": "Gamma Industrial Cluster, Zone C",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-29T07:05:56.017Z",
+          "password_hash": "$2b$10$nYM0nuJ2BVPbSNkAnWXho.QDC7sCEi8SXjUPn9OcGI58PLD.Aouhm",
+          "latitude": 22.92,
+          "longitude": 72.435,
+          "city": "Ahmedabad",
+          "locality": "Changodar",
+          "grid_zone": "Zone C"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789238502858_lst_1789236647200",
+      "requirement_id": "req_1789238502858",
+      "listing_id": "lst_1789236647200",
+      "match_score": 90,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.8 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "26.49 km away (Bodakdev)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.2/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "92% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.2,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.2,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:45:35.375Z",
+      "listing": {
+        "prosumer_id": "p_001",
+        "quantity": 6,
+        "price": 7.2,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789236647200",
+        "created_at": "2026-09-12T18:10:47.200Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_001",
+        "user_id": "usr_p001",
+        "solar_capacity": 10,
+        "reliability_score": 92,
+        "total_energy_sold": 294,
+        "total_earnings": 2205,
+        "user": {
+          "id": "usr_p001",
+          "name": "SunPower Apex (P001)",
+          "email": "p001@gridxchange.io",
+          "phone": "+91 97110 34567",
+          "location": "Apex Villa Rooftop Solar, Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-23T07:05:55.830Z",
+          "password_hash": "$2b$10$htTeDJh632ptnjyiKiDkFehTe/hewlYBC5tsgARMgHnolRbhJHJrW",
+          "latitude": 23.0384,
+          "longitude": 72.5122,
+          "city": "Ahmedabad",
+          "locality": "Bodakdev",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789238502858_lst_1789228237968",
+      "requirement_id": "req_1789238502858",
+      "listing_id": "lst_1789228237968",
+      "match_score": 86,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "25.88 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹5.8/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 5.8,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 5.8,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:45:35.375Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 3.7,
+        "price": 5.8,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789228237968",
+        "created_at": "2026-09-12T15:50:37.968Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789238502858_lst_1789238656781",
+      "requirement_id": "req_1789238502858",
+      "listing_id": "lst_1789238656781",
+      "match_score": 85,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "6.06 km away (Reliance Circle)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹6.7/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": false,
+          "detail": "Zone C (High congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 5.5,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 1.2,
+        "final_price": 6.7,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:45:35.375Z",
+      "listing": {
+        "prosumer_id": "p_1789238633638",
+        "quantity": 3.9,
+        "price": 5.5,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_c",
+        "status": "Available",
+        "id": "lst_1789238656781",
+        "created_at": "2026-09-12T18:44:16.781Z",
+        "grid_zone": {
+          "id": "zone_c",
+          "zone_name": "C",
+          "congestion_level": "High",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789238633630_tnsem",
+        "solar_capacity": 7,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789238633638",
+        "user": {
+          "name": "tina",
+          "email": "tina@gmail.com",
+          "phone": "",
+          "location": "Reliance Circle, Gandhinagar",
+          "city": "Gandhinagar",
+          "locality": "Reliance Circle",
+          "latitude": 23.188408,
+          "longitude": 72.627969,
+          "grid_zone": "Zone C",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$Z8CmECRX1J7.FbWnRAw7MeVD60WOgTQKJ.CsLV6rUbF7Y.2Wp5Mq2",
+          "id": "usr_1789238633630_tnsem",
+          "created_at": "2026-09-12T18:43:53.630Z"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789238502858_lst_1789227975976",
+      "requirement_id": "req_1789238502858",
+      "listing_id": "lst_1789227975976",
+      "match_score": 84,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": false,
+          "detail": "4.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "25.88 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.2/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.2,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.2,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:45:35.375Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 4,
+        "price": 7.2,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789227975976",
+        "created_at": "2026-09-12T15:46:15.976Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789238502858_lst_003",
+      "requirement_id": "req_1789238502858",
+      "listing_id": "lst_003",
+      "match_score": 79,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.1 kWh forecast vs 5 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "41.83 km away (Changodar)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": false,
+          "detail": "₹8.7/kWh within budget (max ₹8/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "85% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": false,
+          "detail": "Zone C (High congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 6,
+        "demand_factor": 1,
+        "supply_factor": 0.5,
+        "congestion_factor": 1.2,
+        "final_price": 8.7,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:45:35.375Z",
+      "listing": {
+        "id": "lst_003",
+        "prosumer_id": "p_003",
+        "quantity": 5.1,
+        "price": 8.5,
+        "date": "2026-09-12",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "grid_zone_id": "zone_c",
+        "status": "Available",
+        "created_at": "2026-09-12T06:05:56.109Z",
+        "grid_zone": {
+          "id": "zone_c",
+          "zone_name": "C",
+          "congestion_level": "High",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_003",
+        "user_id": "usr_p003",
+        "solar_capacity": 8,
+        "reliability_score": 85,
+        "total_energy_sold": 210,
+        "total_earnings": 1680,
+        "user": {
+          "id": "usr_p003",
+          "name": "HelioGrid Gamma (P003)",
+          "email": "p003@gridxchange.io",
+          "phone": "+91 99220 56789",
+          "location": "Gamma Industrial Cluster, Zone C",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-29T07:05:56.017Z",
+          "password_hash": "$2b$10$nYM0nuJ2BVPbSNkAnWXho.QDC7sCEi8SXjUPn9OcGI58PLD.Aouhm",
+          "latitude": 22.92,
+          "longitude": 72.435,
+          "city": "Ahmedabad",
+          "locality": "Changodar",
+          "grid_zone": "Zone C"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789238751933_lst_1789228237968",
+      "requirement_id": "req_1789238751933",
+      "listing_id": "lst_1789228237968",
+      "match_score": 92,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "4.1 kWh forecast vs 4 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "25.88 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹5.8/kWh within budget (max ₹7.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 5.8,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 5.8,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:45:51.944Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 3.7,
+        "price": 5.8,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789228237968",
+        "created_at": "2026-09-12T15:50:37.968Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789238751933_lst_1789238656781",
+      "requirement_id": "req_1789238751933",
+      "listing_id": "lst_1789238656781",
+      "match_score": 90,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "4.1 kWh forecast vs 4 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": true,
+          "detail": "6.06 km away (Reliance Circle)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹6.7/kWh within budget (max ₹7.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": false,
+          "detail": "Zone C (High congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 5.5,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 1.2,
+        "final_price": 6.7,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:45:51.944Z",
+      "listing": {
+        "prosumer_id": "p_1789238633638",
+        "quantity": 3.9,
+        "price": 5.5,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_c",
+        "status": "Available",
+        "id": "lst_1789238656781",
+        "created_at": "2026-09-12T18:44:16.781Z",
+        "grid_zone": {
+          "id": "zone_c",
+          "zone_name": "C",
+          "congestion_level": "High",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789238633630_tnsem",
+        "solar_capacity": 7,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789238633638",
+        "user": {
+          "name": "tina",
+          "email": "tina@gmail.com",
+          "phone": "",
+          "location": "Reliance Circle, Gandhinagar",
+          "city": "Gandhinagar",
+          "locality": "Reliance Circle",
+          "latitude": 23.188408,
+          "longitude": 72.627969,
+          "grid_zone": "Zone C",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$Z8CmECRX1J7.FbWnRAw7MeVD60WOgTQKJ.CsLV6rUbF7Y.2Wp5Mq2",
+          "id": "usr_1789238633630_tnsem",
+          "created_at": "2026-09-12T18:43:53.630Z"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789238751933_lst_1789227975976",
+      "requirement_id": "req_1789238751933",
+      "listing_id": "lst_1789227975976",
+      "match_score": 89,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "4.1 kWh forecast vs 4 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "25.88 km away (Vastrapur)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.2/kWh within budget (max ₹7.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "90% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.2,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.2,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:45:51.944Z",
+      "listing": {
+        "prosumer_id": "p_1789227821977",
+        "quantity": 4,
+        "price": 7.2,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789227975976",
+        "created_at": "2026-09-12T15:46:15.976Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "user_id": "usr_1789227821975_xfh3y",
+        "solar_capacity": 7.1,
+        "reliability_score": 90,
+        "total_energy_sold": 0,
+        "total_earnings": 0,
+        "id": "p_1789227821977",
+        "user": {
+          "name": "Rahul",
+          "email": "rahul@gmail.com",
+          "phone": "",
+          "location": "Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "password_hash": "$2b$10$YAkFhETpJgPPycayLM8z6OhtWpeb0kmV/I9rUcyflpZHITqKnFvoC",
+          "id": "usr_1789227821975_xfh3y",
+          "created_at": "2026-09-12T15:43:41.975Z",
+          "latitude": 23.035,
+          "longitude": 72.5293,
+          "city": "Ahmedabad",
+          "locality": "Vastrapur",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789238751933_lst_1789236647200",
+      "requirement_id": "req_1789238751933",
+      "listing_id": "lst_1789236647200",
+      "match_score": 89,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.8 kWh forecast vs 4 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "26.49 km away (Bodakdev)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": true,
+          "detail": "₹7.2/kWh within budget (max ₹7.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "92% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": true,
+          "detail": "Zone A (Low congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 7.2,
+        "demand_factor": 0,
+        "supply_factor": 0,
+        "congestion_factor": 0,
+        "final_price": 7.2,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:45:51.944Z",
+      "listing": {
+        "prosumer_id": "p_001",
+        "quantity": 6,
+        "price": 7.2,
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "date": "2026-09-12",
+        "grid_zone_id": "zone_a",
+        "status": "Available",
+        "id": "lst_1789236647200",
+        "created_at": "2026-09-12T18:10:47.200Z",
+        "grid_zone": {
+          "id": "zone_a",
+          "zone_name": "A",
+          "congestion_level": "Low",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_001",
+        "user_id": "usr_p001",
+        "solar_capacity": 10,
+        "reliability_score": 92,
+        "total_energy_sold": 294,
+        "total_earnings": 2205,
+        "user": {
+          "id": "usr_p001",
+          "name": "SunPower Apex (P001)",
+          "email": "p001@gridxchange.io",
+          "phone": "+91 97110 34567",
+          "location": "Apex Villa Rooftop Solar, Zone A",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-23T07:05:55.830Z",
+          "password_hash": "$2b$10$htTeDJh632ptnjyiKiDkFehTe/hewlYBC5tsgARMgHnolRbhJHJrW",
+          "latitude": 23.0384,
+          "longitude": 72.5122,
+          "city": "Ahmedabad",
+          "locality": "Bodakdev",
+          "grid_zone": "Zone A"
+        }
+      }
+    },
+    {
+      "id": "mtc_req_1789238751933_lst_003",
+      "requirement_id": "req_1789238751933",
+      "listing_id": "lst_003",
+      "match_score": 78,
+      "reasons": [
+        {
+          "label": "Enough predicted energy",
+          "passed": true,
+          "detail": "5.1 kWh forecast vs 4 kWh needed"
+        },
+        {
+          "label": "Time compatible",
+          "passed": true,
+          "detail": "Window: 14:00 - 15:00"
+        },
+        {
+          "label": "Nearby",
+          "passed": false,
+          "detail": "41.83 km away (Changodar)"
+        },
+        {
+          "label": "Competitive price",
+          "passed": false,
+          "detail": "₹8.7/kWh within budget (max ₹7.5/kWh)"
+        },
+        {
+          "label": "High reliability",
+          "passed": true,
+          "detail": "85% historical fulfillment reliability"
+        },
+        {
+          "label": "Low grid congestion",
+          "passed": false,
+          "detail": "Zone C (High congestion)"
+        }
+      ],
+      "pricing_breakdown": {
+        "base_price": 6,
+        "demand_factor": 1,
+        "supply_factor": 0.5,
+        "congestion_factor": 1.2,
+        "final_price": 8.7,
+        "currency": "₹"
+      },
+      "created_at": "2026-09-12T18:45:51.944Z",
+      "listing": {
+        "id": "lst_003",
+        "prosumer_id": "p_003",
+        "quantity": 5.1,
+        "price": 8.5,
+        "date": "2026-09-12",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "grid_zone_id": "zone_c",
+        "status": "Available",
+        "created_at": "2026-09-12T06:05:56.109Z",
+        "grid_zone": {
+          "id": "zone_c",
+          "zone_name": "C",
+          "congestion_level": "High",
+          "updated_at": "2026-09-12T07:05:55.602Z"
+        }
+      },
+      "prosumer": {
+        "id": "p_003",
+        "user_id": "usr_p003",
+        "solar_capacity": 8,
+        "reliability_score": 85,
+        "total_energy_sold": 210,
+        "total_earnings": 1680,
+        "user": {
+          "id": "usr_p003",
+          "name": "HelioGrid Gamma (P003)",
+          "email": "p003@gridxchange.io",
+          "phone": "+91 99220 56789",
+          "location": "Gamma Industrial Cluster, Zone C",
+          "role": "prosumer",
+          "status": "active",
+          "created_at": "2026-08-29T07:05:56.017Z",
+          "password_hash": "$2b$10$nYM0nuJ2BVPbSNkAnWXho.QDC7sCEi8SXjUPn9OcGI58PLD.Aouhm",
+          "latitude": 22.92,
+          "longitude": 72.435,
+          "city": "Ahmedabad",
+          "locality": "Changodar",
+          "grid_zone": "Zone C"
+        }
+      }
     }
   ],
   "trades": [
@@ -5049,6 +8259,70 @@
       "id": "trd_1789230877284",
       "created_at": "2026-09-12T16:34:37.284Z",
       "updated_at": "2026-09-12T16:34:46.102Z"
+    },
+    {
+      "buyer_id": "c_1789236591157",
+      "seller_id": "p_1789236590571",
+      "listing_id": "lst_1789236590867",
+      "requirement_id": "req_1789236591276",
+      "quantity": 5,
+      "price": 6.8,
+      "total_amount": 34,
+      "status": "Settled",
+      "time_window": "14:00 - 15:00",
+      "date": "2026-09-12",
+      "scheduled_time": "2026-09-12 14:00",
+      "id": "trd_1789236591303",
+      "created_at": "2026-09-12T18:09:51.303Z",
+      "updated_at": "2026-09-12T18:09:51.344Z"
+    },
+    {
+      "buyer_id": "c_001",
+      "seller_id": "p_002",
+      "listing_id": "lst_002",
+      "requirement_id": "req_1789236619769",
+      "quantity": 5,
+      "price": 7.2,
+      "total_amount": 36,
+      "status": "Settled",
+      "time_window": "14:00 - 15:00",
+      "date": "2026-09-12",
+      "scheduled_time": "2026-09-12 14:00",
+      "id": "trd_1789236619801",
+      "created_at": "2026-09-12T18:10:19.801Z",
+      "updated_at": "2026-09-12T18:10:19.841Z"
+    },
+    {
+      "buyer_id": "c_001",
+      "seller_id": "p_001",
+      "listing_id": "lst_1789228532993",
+      "requirement_id": "req_1789236647085",
+      "quantity": 5,
+      "price": 7.5,
+      "total_amount": 37.5,
+      "status": "Settled",
+      "time_window": "14:00 - 15:00",
+      "date": "2026-09-12",
+      "scheduled_time": "2026-09-12 14:00",
+      "id": "trd_1789236647107",
+      "created_at": "2026-09-12T18:10:47.107Z",
+      "updated_at": "2026-09-12T18:10:47.148Z"
+    },
+    {
+      "buyer_id": "c_001",
+      "seller_id": "p_1789236657778",
+      "listing_id": "lst_1789236657798",
+      "requirement_id": "req_1789236657810",
+      "quantity": 5,
+      "price": 6.9,
+      "total_amount": 34.5,
+      "status": "Settled",
+      "time_window": "14:00 - 15:00",
+      "date": "2026-09-12",
+      "scheduled_time": "2026-09-12 14:00",
+      "id": "trd_1789236657821",
+      "created_at": "2026-09-12T18:10:57.821Z",
+      "updated_at": "2026-09-12T18:10:57.844Z"
     }
   ],
   "settlements": [
@@ -5141,6 +8415,46 @@
       "settlement_status": "Completed",
       "id": "stl_1789230886098_dgs",
       "created_at": "2026-09-12T16:34:46.098Z"
+    },
+    {
+      "trade_id": "trd_1789236591303",
+      "seller_id": "p_1789236590571",
+      "actual_quantity": 5,
+      "seller_amount": 34,
+      "buyer_amount": 34,
+      "settlement_status": "Completed",
+      "id": "stl_1789236591339_7gy",
+      "created_at": "2026-09-12T18:09:51.339Z"
+    },
+    {
+      "trade_id": "trd_1789236619801",
+      "seller_id": "p_002",
+      "actual_quantity": 5,
+      "seller_amount": 36,
+      "buyer_amount": 36,
+      "settlement_status": "Completed",
+      "id": "stl_1789236619836_4ch",
+      "created_at": "2026-09-12T18:10:19.837Z"
+    },
+    {
+      "trade_id": "trd_1789236647107",
+      "seller_id": "p_001",
+      "actual_quantity": 5,
+      "seller_amount": 37.5,
+      "buyer_amount": 37.5,
+      "settlement_status": "Completed",
+      "id": "stl_1789236647144_3ai",
+      "created_at": "2026-09-12T18:10:47.144Z"
+    },
+    {
+      "trade_id": "trd_1789236657821",
+      "seller_id": "p_1789236657778",
+      "actual_quantity": 5,
+      "seller_amount": 34.5,
+      "buyer_amount": 34.5,
+      "settlement_status": "Completed",
+      "id": "stl_1789236657841_wm8",
+      "created_at": "2026-09-12T18:10:57.841Z"
     }
   ],
   "forecasts": [
@@ -5192,6 +8506,33 @@
     {
       "id": "fc_1789227821983",
       "prosumer_id": "p_1789227821977",
+      "predicted_generation": 6.2,
+      "predicted_consumption": 2.1,
+      "predicted_surplus": 4.1,
+      "confidence_score": 92,
+      "prediction_time": "2026-09-12T14:00:00.000Z"
+    },
+    {
+      "id": "fc_1789236590578",
+      "prosumer_id": "p_1789236590571",
+      "predicted_generation": 10.6,
+      "predicted_consumption": 3.6,
+      "predicted_surplus": 7,
+      "confidence_score": 92,
+      "prediction_time": "2026-09-12T14:00:00.000Z"
+    },
+    {
+      "id": "fc_1789236657786",
+      "prosumer_id": "p_1789236657778",
+      "predicted_generation": 7.5,
+      "predicted_consumption": 2.5,
+      "predicted_surplus": 5,
+      "confidence_score": 92,
+      "prediction_time": "2026-09-12T14:00:00.000Z"
+    },
+    {
+      "id": "fc_1789238633653",
+      "prosumer_id": "p_1789238633638",
       "predicted_generation": 6.2,
       "predicted_consumption": 2.1,
       "predicted_surplus": 4.1,
@@ -5429,6 +8770,134 @@
       "message": "Delivery simulated & verified: 5 kWh received from seller. Trade #77284 settled at ₹37.50.",
       "id": "notif_1789230886109_uw9",
       "created_at": "2026-09-12T16:34:46.109Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_1789236591155_i3fg4",
+      "type": "trade_confirmed",
+      "message": "Trade #91303 confirmed: 5 kWh scheduled with SunPower Apex (P001) for 14:00 - 15:00 at ₹7.50/kWh.",
+      "id": "notif_1789236591316_nml",
+      "created_at": "2026-09-12T18:09:51.316Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_1789236590567_0wjff",
+      "type": "trade_scheduled",
+      "message": "New trade scheduled: 5 kWh requested by Kavita Iyer (C101) for 14:00 - 15:00.",
+      "id": "notif_1789236591320_u8k",
+      "created_at": "2026-09-12T18:09:51.320Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_1789236590567_0wjff",
+      "type": "trade_settled",
+      "message": "Delivery simulated & verified: 5 kWh delivered. ₹34.00 credited to your account.",
+      "id": "notif_1789236591350_ome",
+      "created_at": "2026-09-12T18:09:51.350Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_1789236591155_i3fg4",
+      "type": "trade_settled",
+      "message": "Delivery simulated & verified: 5 kWh received from seller. Trade #91303 settled at ₹34.00.",
+      "id": "notif_1789236591354_gd1",
+      "created_at": "2026-09-12T18:09:51.354Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_c001",
+      "type": "trade_confirmed",
+      "message": "Trade #19801 confirmed: 5 kWh scheduled with SunPower Apex (P001) for 14:00 - 15:00 at ₹7.50/kWh.",
+      "id": "notif_1789236619815_gq3",
+      "created_at": "2026-09-12T18:10:19.815Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_p002",
+      "type": "trade_scheduled",
+      "message": "New trade scheduled: 5 kWh requested by Ananya Sharma (C001) for 14:00 - 15:00.",
+      "id": "notif_1789236619819_6et",
+      "created_at": "2026-09-12T18:10:19.819Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_p002",
+      "type": "trade_settled",
+      "message": "Delivery simulated & verified: 5 kWh delivered. ₹36.00 credited to your account.",
+      "id": "notif_1789236619845_ypp",
+      "created_at": "2026-09-12T18:10:19.845Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_c001",
+      "type": "trade_settled",
+      "message": "Delivery simulated & verified: 5 kWh received from seller. Trade #19801 settled at ₹36.00.",
+      "id": "notif_1789236619849_882",
+      "created_at": "2026-09-12T18:10:19.849Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_c001",
+      "type": "trade_confirmed",
+      "message": "Trade #47107 confirmed: 5 kWh scheduled with SunPower Apex (P001) for 14:00 - 15:00 at ₹7.50/kWh.",
+      "id": "notif_1789236647122_g8i",
+      "created_at": "2026-09-12T18:10:47.122Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_p001",
+      "type": "trade_scheduled",
+      "message": "New trade scheduled: 5 kWh requested by Ananya Sharma (C001) for 14:00 - 15:00.",
+      "id": "notif_1789236647126_5i6",
+      "created_at": "2026-09-12T18:10:47.126Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_p001",
+      "type": "trade_settled",
+      "message": "Delivery simulated & verified: 5 kWh delivered. ₹37.50 credited to your account.",
+      "id": "notif_1789236647154_lqz",
+      "created_at": "2026-09-12T18:10:47.154Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_c001",
+      "type": "trade_settled",
+      "message": "Delivery simulated & verified: 5 kWh received from seller. Trade #47107 settled at ₹37.50.",
+      "id": "notif_1789236647159_1y4",
+      "created_at": "2026-09-12T18:10:47.159Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_c001",
+      "type": "trade_confirmed",
+      "message": "Trade #57821 confirmed: 5 kWh scheduled with SunPower Apex (P001) for 14:00 - 15:00 at ₹7.50/kWh.",
+      "id": "notif_1789236657832_u9m",
+      "created_at": "2026-09-12T18:10:57.832Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_1789236657775_uvxtt",
+      "type": "trade_scheduled",
+      "message": "New trade scheduled: 5 kWh requested by Ananya Sharma (C001) for 14:00 - 15:00.",
+      "id": "notif_1789236657835_c0f",
+      "created_at": "2026-09-12T18:10:57.835Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_1789236657775_uvxtt",
+      "type": "trade_settled",
+      "message": "Delivery simulated & verified: 5 kWh delivered. ₹34.50 credited to your account.",
+      "id": "notif_1789236657849_kds",
+      "created_at": "2026-09-12T18:10:57.849Z"
+    },
+    {
+      "read_status": false,
+      "user_id": "usr_c001",
+      "type": "trade_settled",
+      "message": "Delivery simulated & verified: 5 kWh received from seller. Trade #57821 settled at ₹34.50.",
+      "id": "notif_1789236657852_gwn",
+      "created_at": "2026-09-12T18:10:57.852Z"
     }
   ]
 }
