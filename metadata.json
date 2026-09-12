@@ -1,0 +1,6 @@
+{
+  "name": "GridXchange",
+  "description": "AI-Powered P2P Renewable Energy Trading Marketplace with predictive forecasting, explainable smart matching, grid congestion awareness, dynamic pricing, and automatic shortfall rebalancing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
