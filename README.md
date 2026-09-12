@@ -6,7 +6,7 @@
 [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-> **Live Demo URL**: [https://funk-machine-developed-wiki.trycloudflare.com](https://funk-machine-developed-wiki.trycloudflare.com)
+> **Live Demo URL**: https://gridxchange-oakr.onrender.com/
 
 ---
 
